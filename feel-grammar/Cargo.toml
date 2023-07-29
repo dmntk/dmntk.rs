@@ -1,0 +1,13 @@
+[package]
+name = "dmntk-feel-grammar"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | FEEL grammar"
+documentation = "https://docs.rs/dmntk-feel-grammar"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+convert_case.workspace = true
+regex.workspace = true

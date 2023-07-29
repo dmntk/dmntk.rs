@@ -1,0 +1,18 @@
+[package]
+name = "dmntk-feel-temporal"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | FEEL temporal"
+documentation = "https://docs.rs/dmntk-feel-temporal"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+chrono.workspace = true
+chrono-tz.workspace = true
+once_cell.workspace = true
+regex.workspace = true
+dmntk-common.workspace = true
+dmntk-feel-number.workspace = true
+dmntk-macros.workspace = true

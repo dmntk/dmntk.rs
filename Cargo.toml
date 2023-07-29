@@ -1,0 +1,71 @@
+[workspace]
+
+resolver = "2"
+
+members = [
+    "common",
+    "dmntk",
+    "evaluator",
+    "examples",
+    "feel",
+    "feel-grammar",
+    "feel-evaluator",
+    "feel-number",
+    "feel-parser",
+    "feel-temporal",
+    "gendoc",
+    "macros",
+    "model",
+    "model-evaluator",
+    "recognizer",
+    "server",
+    "workspace"
+]
+
+[workspace.package]
+version = "0.3.0"
+authors = ["Dariusz Depta <dariusz.depta@dmntk.io>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[workspace.dependencies]
+actix-web = "4.3.1"
+base64 = "0.21.2"
+chrono = "0.4.26"
+chrono-tz = "0.8.2"
+convert_case = "0.6.0"
+clap = { version = "4.3.3", features = ["cargo"] }
+dfp-number-sys = "0.0.13"
+difference = "2.0.0"
+domrs = "0.0.5"
+markdown = "1.0.0-alpha.9"
+once_cell = "1.18.0"
+petgraph = "0.6.3"
+quote = "1.0.28"
+regex = "1.8.4"
+reqwest = { version = "0.11.18", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+roxmltree = "0.18.0"
+serde = { version = "1.0.164", features = ["derive"] }
+serde_json = "1.0.96"
+syn = "2.0.19"
+uuid = { version = "1.3.3", features = ["v4"] }
+uriparse = "0.6.4"
+url = "2.4.0"
+urlencoding = "2.1.2"
+walkdir = "2.3.3"
+dmntk-common = "0.3.0"
+dmntk-evaluator = "0.3.0"
+dmntk-examples = "0.3.0"
+dmntk-feel = "0.3.0"
+dmntk-feel-evaluator = "0.3.0"
+dmntk-feel-grammar = "0.3.0"
+dmntk-feel-number = "0.3.0"
+dmntk-feel-parser = "0.3.0"
+dmntk-feel-temporal = "0.3.0"
+dmntk-gendoc = "0.3.0"
+dmntk-macros = "0.3.0"
+dmntk-model = "0.3.0"
+dmntk-model-evaluator = "0.3.0"
+dmntk-recognizer = "0.3.0"
+dmntk-server = "0.3.0"
+dmntk-workspace = "0.3.0"

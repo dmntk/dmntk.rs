@@ -1,0 +1,20 @@
+[package]
+name = "dmntk-gendoc"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | Documentation generator"
+documentation = "https://docs.rs/dmntk-model"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+domrs.workspace = true
+markdown.workspace = true
+dmntk-common.workspace = true
+dmntk-examples.workspace = true
+dmntk-feel.workspace = true
+dmntk-model.workspace = true
+
+[dev-dependencies]
+dmntk-recognizer.workspace = true

@@ -1,0 +1,16 @@
+[package]
+name = "dmntk-common"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | Common definitions"
+documentation = "https://docs.rs/dmntk-common"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde.workspace = true
+uuid.workspace = true
+uriparse.workspace = true
+url.workspace = true
+dmntk-macros.workspace = true

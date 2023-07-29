@@ -1,0 +1,21 @@
+[package]
+name = "dmntk-feel-evaluator"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | FEEL evaluator"
+documentation = "https://docs.rs/dmntk-feel-evaluator"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+once_cell.workspace = true
+regex.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+dmntk-common.workspace = true
+dmntk-feel.workspace = true
+dmntk-feel-parser.workspace = true
+dmntk-feel-temporal.workspace = true
+dmntk-macros.workspace = true

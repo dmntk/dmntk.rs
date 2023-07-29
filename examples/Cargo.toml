@@ -1,0 +1,12 @@
+[package]
+name = "dmntk-examples"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | Examples"
+documentation = "https://docs.rs/dmntk-examples"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dev-dependencies]
+walkdir.workspace = true

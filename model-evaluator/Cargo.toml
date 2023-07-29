@@ -1,0 +1,24 @@
+[package]
+name = "dmntk-model-evaluator"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | DMN model evaluator"
+documentation = "https://docs.rs/dmntk-evaluator"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+dmntk-common.workspace = true
+dmntk-feel.workspace = true
+dmntk-feel-evaluator.workspace = true
+dmntk-feel-parser.workspace = true
+dmntk-feel-temporal.workspace = true
+dmntk-macros.workspace = true
+dmntk-model.workspace = true
+
+[dev-dependencies]
+once_cell.workspace = true
+walkdir.workspace = true
+dmntk-examples.workspace = true
+dmntk-recognizer.workspace = true

@@ -1,0 +1,23 @@
+[package]
+name = "dmntk-feel"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | FEEL definitions"
+documentation = "https://docs.rs/dmntk-feel"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+chrono.workspace = true
+chrono-tz.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+regex.workspace = true
+dmntk-common.workspace = true
+dmntk-feel-number.workspace = true
+dmntk-feel-temporal.workspace = true
+dmntk-macros.workspace = true
+
+[dev-dependencies]
+once_cell.workspace = true

@@ -1,0 +1,26 @@
+[package]
+name = "dmntk"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | Decision Model and Notation Toolkit"
+documentation = "https://docs.rs/dmntk"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+actix-web.workspace = true
+base64.workspace = true
+clap.workspace = true
+difference.workspace = true
+once_cell.workspace = true
+serde.workspace = true
+dmntk-common.workspace = true
+dmntk-evaluator.workspace = true
+dmntk-feel.workspace = true
+dmntk-feel-parser.workspace = true
+dmntk-gendoc.workspace = true
+dmntk-model.workspace = true
+dmntk-recognizer.workspace = true
+dmntk-server.workspace = true
+dmntk-workspace.workspace = true

@@ -1,0 +1,25 @@
+[package]
+name = "dmntk-server"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | API server"
+documentation = "https://docs.rs/dmntk-server"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[features]
+default = []
+tck = []
+
+[dependencies]
+actix-web.workspace = true
+base64.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+dmntk-common.workspace = true
+dmntk-evaluator.workspace = true
+dmntk-feel.workspace = true
+dmntk-macros.workspace = true
+dmntk-model.workspace = true
+dmntk-workspace.workspace = true

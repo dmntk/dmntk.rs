@@ -1,0 +1,16 @@
+[package]
+name = "dmntk-feel-number"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | FEEL number"
+documentation = "https://docs.rs/dmntk-feel-number"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[features]
+
+[dependencies]
+dfp-number-sys.workspace = true
+dmntk-common.workspace = true
+dmntk-macros.workspace = true

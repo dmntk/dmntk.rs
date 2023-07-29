@@ -1,0 +1,16 @@
+[package]
+name = "dmntk-macros"
+version.workspace = true
+authors.workspace = true
+description = "DMNTK | Procedural and derive macros"
+documentation = "https://docs.rs/dmntk-macros"
+repository = "https://github.com/dmntk/dmntk.rs.git"
+license.workspace = true
+edition.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn.workspace = true
+quote.workspace = true
