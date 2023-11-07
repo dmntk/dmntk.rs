@@ -1,9 +1,0 @@
-    AST:
-       Sub
-       ├─ Add
-       │  ├─ Name
-       │  │  └─ `a`
-       │  └─ Name
-       │     └─ `b`
-       └─ Name
-          └─ `c`

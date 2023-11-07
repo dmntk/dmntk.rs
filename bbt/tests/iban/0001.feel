@@ -1,6 +1,0 @@
-{
-  m: 98 - modulo(number(iban + "252100"," ",null), 97),
-  s: string(m),
-  c: if m < 10 then "0" + s else s,
-  i: c + " " + iban
-}.i
