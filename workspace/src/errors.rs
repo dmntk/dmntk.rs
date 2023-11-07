@@ -32,7 +32,7 @@
 
 //! Errors reported by workspace.
 
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// Errors reported by workspace.
 #[derive(ToErrorMessage)]

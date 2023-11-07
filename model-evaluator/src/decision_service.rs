@@ -36,7 +36,7 @@ use crate::model_builder::ModelBuilder;
 use crate::model_definitions::{DefDecisionService, DefDefinitions, DefKey};
 use crate::model_evaluator::ModelEvaluator;
 use crate::variable::Variable;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::closure::Closure;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;

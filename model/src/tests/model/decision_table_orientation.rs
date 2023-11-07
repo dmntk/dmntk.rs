@@ -33,7 +33,7 @@
 //! Decision table orientation tests.
 
 use crate::model::DecisionTableOrientation;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 
 #[test]
 fn test_try_from() {

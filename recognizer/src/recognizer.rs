@@ -38,7 +38,7 @@ use crate::canvas;
 use crate::canvas::Canvas;
 use crate::errors::*;
 use crate::plane::{HitPolicyPlacement, Plane, RuleNumbersPlacement};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_model::{DecisionTableOrientation, HitPolicy};
 
 /// Decision table recognizer.

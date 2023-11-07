@@ -34,7 +34,7 @@
 
 use crate::errors::*;
 use crate::FeelType;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use std::str::FromStr;
 
 #[derive(Debug, Clone, PartialEq, Eq)]

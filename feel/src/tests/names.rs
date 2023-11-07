@@ -31,7 +31,7 @@
  */
 
 use crate::Name;
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 use std::collections::HashMap;
 
 #[test]

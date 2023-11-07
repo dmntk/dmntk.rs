@@ -34,7 +34,7 @@
 
 use crate::errors::*;
 use crate::recognizer::Recognizer;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_model::*;
 
 struct Size {

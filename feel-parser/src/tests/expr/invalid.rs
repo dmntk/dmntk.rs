@@ -35,7 +35,7 @@
 use super::super::*;
 use crate::lalr::TokenType::StartExpression;
 use crate::parser::Parser;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use std::str::from_utf8;
 
 /// Utility function to shorten repeatable code in tests.

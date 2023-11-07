@@ -36,7 +36,7 @@ use crate::context::FeelContext;
 use crate::errors::*;
 use crate::values::Value;
 use crate::{value_null, Name};
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use serde::{Deserialize, Serialize};
 
 pub const XSD_STRING: &str = "xsd:string";

@@ -46,7 +46,7 @@ use url::Url;
 /// # Examples
 ///
 /// ```
-/// use dmntk_common::to_rdnn;
+/// use dmntk_common_1::to_rdnn;
 ///
 /// let rdnn = to_rdnn("https://dmntk.io/system-1/component-1");
 /// assert_eq!(Some("io/dmntk/system-1/component-1".to_string()), rdnn);

@@ -37,7 +37,7 @@ use crate::errors::*;
 use crate::names::Name;
 use crate::value_null;
 use crate::values::Value;
-use dmntk_common::{DmntkError, Result};
+use dmntk_common_1::{DmntkError, Result};
 use std::collections::BTreeMap;
 use std::fmt;
 use std::str::FromStr;

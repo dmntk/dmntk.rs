@@ -32,7 +32,7 @@
 
 //! # Error definitions for TCK handler
 
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// Server errors for TCK handler.
 #[derive(ToErrorMessage)]

@@ -35,7 +35,7 @@
 use crate::examples::*;
 use clap::{arg, command, crate_description, crate_version, ArgAction, ArgMatches, Command};
 use difference::Changeset;
-use dmntk_common::*;
+use dmntk_common_1::*;
 use dmntk_feel::values::Value;
 use dmntk_feel::FeelScope;
 use dmntk_feel_parser::ast_tree;

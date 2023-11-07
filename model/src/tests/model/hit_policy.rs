@@ -33,7 +33,7 @@
 //! Hit policy tests.
 
 use crate::model::{BuiltinAggregator, HitPolicy};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 
 #[test]
 fn test_display() {

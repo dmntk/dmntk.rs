@@ -34,7 +34,7 @@
 
 use crate::FeelDateTime;
 use chrono::{DateTime, FixedOffset};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 
 #[test]
 fn _0001() {

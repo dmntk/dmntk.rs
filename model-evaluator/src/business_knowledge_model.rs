@@ -37,7 +37,7 @@ use crate::errors::*;
 use crate::model_builder::ModelBuilder;
 use crate::model_definitions::{DefBusinessKnowledgeModel, DefDefinitions, DefKey};
 use crate::model_evaluator::ModelEvaluator;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::closure::Closure;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;

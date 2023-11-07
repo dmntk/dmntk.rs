@@ -40,7 +40,7 @@ use crate::names::Name;
 use crate::strings::ToFeelString;
 use crate::types::FeelType;
 use crate::FunctionBody;
-use dmntk_common::{Jsonify, Result};
+use dmntk_common_1::{Jsonify, Result};
 use dmntk_feel_number::FeelNumber;
 use dmntk_feel_temporal::{
     FeelDate, FeelDateTime, FeelDaysAndTimeDuration, FeelTime, FeelYearsAndMonthsDuration,

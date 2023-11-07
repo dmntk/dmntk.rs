@@ -35,7 +35,7 @@ use crate::names::Name;
 use crate::qualified_names::QualifiedName;
 use crate::values::Value;
 use crate::{value_number, ToFeelString};
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 
 #[test]
 fn test_context_default() {

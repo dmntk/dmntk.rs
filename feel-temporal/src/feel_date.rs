@@ -39,7 +39,7 @@ use crate::FeelDaysAndTimeDuration;
 use chrono::{
     DateTime, Datelike, Days, FixedOffset, Local, LocalResult, Months, NaiveDate, TimeZone, Weekday,
 };
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use dmntk_feel_number::FeelNumber;
 use std::cmp::Ordering;
 use std::convert::{TryFrom, TryInto};
@@ -410,7 +410,7 @@ pub fn last_day_of_month(year: Year, month: Month) -> Option<Day> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use dmntk_common::Result;
+    use dmntk_common_1::Result;
 
     #[test]
     fn test_display() {

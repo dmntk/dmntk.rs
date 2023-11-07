@@ -41,7 +41,7 @@ use uuid::Uuid;
 /// The string should be 36 characters long.
 ///
 /// ```
-/// use dmntk_common::gen_id;
+/// use dmntk_common_1::gen_id;
 ///
 /// assert_eq!(36, gen_id().len());
 /// ```

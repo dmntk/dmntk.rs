@@ -33,7 +33,7 @@
 //! Implementation of FEEL years and months duration.
 
 use crate::errors::*;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use once_cell::sync::Lazy;
 use regex::Regex;
 use std::convert::TryFrom;

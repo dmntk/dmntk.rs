@@ -38,7 +38,7 @@ use crate::defs::*;
 use crate::errors::*;
 use crate::feel_date_time::FeelDateTime;
 use crate::feel_dt_duration::FeelDaysAndTimeDuration;
-use dmntk_common::{DmntkError, Result};
+use dmntk_common_1::{DmntkError, Result};
 use std::cmp::Ordering;
 use std::ops::{Add, Sub};
 use std::str::FromStr;

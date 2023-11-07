@@ -34,7 +34,7 @@
 
 use crate::defs::*;
 use crate::errors::*;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use regex::Captures;
 use std::fmt;
 use std::ops::{Div, Rem};

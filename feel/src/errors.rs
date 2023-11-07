@@ -33,7 +33,7 @@
 //! # Error definitions
 
 use crate::values::Value;
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// Definition of errors raised in `types` module.
 #[derive(ToErrorMessage)]

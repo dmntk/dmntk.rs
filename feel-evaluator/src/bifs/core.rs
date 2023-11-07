@@ -34,7 +34,7 @@
 
 use crate::evaluate_equals;
 use crate::macros::invalid_argument_type;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::{Value, Values, VALUE_FALSE, VALUE_TRUE};
 use dmntk_feel::{

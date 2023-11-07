@@ -35,7 +35,7 @@
 use crate::context::FeelContext;
 use crate::values::Value;
 use crate::{Name, QualifiedName};
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 use std::cell::RefCell;
 use std::fmt;
 

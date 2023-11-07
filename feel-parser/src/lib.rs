@@ -54,7 +54,7 @@ pub use scope::ParsingScope;
 use crate::errors::*;
 use crate::lalr::TokenType;
 use crate::parser::Parser;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::{FeelScope, Name};
 
 /// Parses an `expression` as defined in grammar rule `1`.

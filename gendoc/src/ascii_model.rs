@@ -32,7 +32,7 @@
 
 //! # ASCII report of the DMN model
 
-use dmntk_common::{
+use dmntk_common_1::{
     color_256, write_indented, AsciiLine, AsciiNode, AsciiNodeBuilder, ColorMode, HRef,
 };
 

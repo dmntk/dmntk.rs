@@ -34,7 +34,7 @@
 
 use crate::errors::err_invalid_item_definition_type;
 use crate::type_ref::type_ref_to_feel_type;
-use dmntk_common::{HRef, Result};
+use dmntk_common_1::{HRef, Result};
 use dmntk_feel::{Name, QualifiedName};
 use dmntk_model::*;
 use std::collections::HashMap;

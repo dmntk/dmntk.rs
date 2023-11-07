@@ -36,7 +36,7 @@ use super::errors::err_missing_attribute;
 use crate::data::ApplicationData;
 use actix_web::web::Json;
 use actix_web::{post, web};
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::dto::ValueDto;
 use dmntk_feel::values::Value;

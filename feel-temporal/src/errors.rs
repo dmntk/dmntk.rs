@@ -33,7 +33,7 @@
 //! Implementation of FEEL temporal errors.
 
 use crate::FeelDate;
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 use dmntk_feel_number::FeelNumber;
 
 /// FEEL temporal error.

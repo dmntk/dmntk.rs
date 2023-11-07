@@ -32,7 +32,7 @@
 
 use crate::builders::BuildContext;
 use crate::errors::err_not_a_context;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;
 use dmntk_feel::{Evaluator, FeelScope};

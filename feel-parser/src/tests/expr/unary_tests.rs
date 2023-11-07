@@ -33,7 +33,7 @@
 use super::super::*;
 use crate::lalr::TokenType::StartUnaryTests;
 use crate::parser::Parser;
-use dmntk_common::DmntkError;
+use dmntk_common_1::DmntkError;
 
 #[test]
 fn _0001() {

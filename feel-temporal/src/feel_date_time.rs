@@ -41,7 +41,7 @@ use crate::errors::err_date_time_conversion_failed;
 use crate::feel_ym_duration::FeelYearsAndMonthsDuration;
 use crate::FeelDaysAndTimeDuration;
 use chrono::{DateTime, Datelike, Duration, FixedOffset, Timelike};
-use dmntk_common::{DmntkError, Result};
+use dmntk_common_1::{DmntkError, Result};
 use std::cmp::Ordering;
 use std::fmt;
 use std::ops::{Add, Sub};

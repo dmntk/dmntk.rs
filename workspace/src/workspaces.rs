@@ -34,7 +34,7 @@
 
 use crate::builder::WorkspaceBuilder;
 use crate::errors::*;
-use dmntk_common::{ColorPalette, Result};
+use dmntk_common_1::{ColorPalette, Result};
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;
 use dmntk_model_evaluator::ModelEvaluator;

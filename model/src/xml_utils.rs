@@ -33,7 +33,7 @@
 //! # XML utilities
 
 use crate::errors::*;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use roxmltree::Node;
 use std::str::FromStr;
 

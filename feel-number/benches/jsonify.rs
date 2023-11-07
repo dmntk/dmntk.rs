@@ -34,7 +34,7 @@
 
 extern crate test;
 
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 use dmntk_feel_number::FeelNumber;
 use test::Bencher;
 

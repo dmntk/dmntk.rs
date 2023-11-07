@@ -32,7 +32,7 @@
 
 //! Implementation of errors for FEEL parser.
 
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// Lexer error.
 #[derive(ToErrorMessage)]

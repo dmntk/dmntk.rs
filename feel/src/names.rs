@@ -32,7 +32,7 @@
 
 //! `FEEL` name implementation.
 
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 use std::fmt;
 
 /// `FEEL` name.

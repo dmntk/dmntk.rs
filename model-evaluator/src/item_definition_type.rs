@@ -35,7 +35,7 @@
 use crate::errors::*;
 use crate::model_definitions::{DefDefinitions, DefItemDefinition, DefKey};
 use crate::type_ref::type_ref_to_feel_type;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::{FeelType, Name, FEEL_TYPE_NAME_ANY};
 use dmntk_model::ItemDefinitionType;
 use std::collections::{BTreeMap, HashMap};

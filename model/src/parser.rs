@@ -36,7 +36,7 @@ use crate::errors::*;
 use crate::model::*;
 use crate::validator::validate;
 use crate::xml_utils::*;
-use dmntk_common::{gen_id, to_uri, HRef, Result, Uri};
+use dmntk_common_1::{gen_id, to_uri, HRef, Result, Uri};
 use dmntk_feel::{Name, FEEL_TYPE_NAME_ANY};
 use roxmltree::Node;
 

@@ -66,7 +66,7 @@
 //! % { Customer:"Government", Order:  10.00 }, null
 //! ```
 
-use dmntk_common::{DmntkError, Result};
+use dmntk_common_1::{DmntkError, Result};
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;
 use dmntk_feel::FeelScope;

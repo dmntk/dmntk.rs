@@ -43,7 +43,7 @@
 
 use crate::errors::err_item_definitions_cycle;
 use crate::{Definitions, ItemDefinition, NamedElement};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use petgraph::algo::is_cyclic_directed;
 use petgraph::graph::{DiGraph, NodeIndex};
 use std::collections::HashMap;

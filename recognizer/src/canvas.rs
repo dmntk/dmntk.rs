@@ -36,7 +36,7 @@ use crate::errors::*;
 use crate::plane::{Cell, Plane};
 use crate::point::{Point, Points, POINT_ZERO};
 use crate::rect::{Rect, Rectangles};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 
 /// Number of layers in canvas.
 pub const LAYER_COUNT: usize = 4;

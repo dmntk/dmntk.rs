@@ -34,7 +34,7 @@
 
 use crate::errors::*;
 use crate::model_definitions::{DefDefinitions, DefItemDefinition, DefKey};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::Value;
 use dmntk_feel::{FeelType, Name};

@@ -36,7 +36,7 @@
 //! depicted in one or more Decision Requirements Diagrams (DRD).
 
 use crate::errors::*;
-use dmntk_common::{gen_id, DmntkError, HRef, Result, Uri};
+use dmntk_common_1::{gen_id, DmntkError, HRef, Result, Uri};
 use dmntk_feel::{FeelType, Name};
 use std::convert::TryFrom;
 use std::fmt;

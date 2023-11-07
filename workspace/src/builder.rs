@@ -32,7 +32,7 @@
 
 //! # Workspace builder
 
-use dmntk_common::{to_rdnn, ColorPalette};
+use dmntk_common_1::{to_rdnn, ColorPalette};
 use dmntk_model::Definitions;
 use dmntk_model_evaluator::ModelEvaluator;
 use std::collections::{HashMap, HashSet};

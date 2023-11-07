@@ -38,7 +38,7 @@ use crate::qualified_names::QualifiedName;
 use crate::strings::ToFeelString;
 use crate::value_null;
 use crate::values::Value;
-use dmntk_common::{DmntkError, Jsonify};
+use dmntk_common_1::{DmntkError, Jsonify};
 use std::collections::btree_map::Iter;
 use std::collections::BTreeMap;
 use std::convert::TryFrom;

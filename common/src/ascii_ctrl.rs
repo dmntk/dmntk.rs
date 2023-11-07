@@ -129,7 +129,7 @@ impl From<String> for ColorMode {
 /// # Examples
 ///
 /// ```
-/// use dmntk_common::{ColorMode, color_256};
+/// use dmntk_common_1::{ColorMode, color_256};
 ///
 /// assert_eq!("\u{1b}[38;5;0m", color_256!(ColorMode::On, 0));
 /// assert_eq!("\u{1b}[38;5;28m", color_256!(ColorMode::On, 28));
@@ -156,7 +156,7 @@ macro_rules! make_color_macro {
     #[doc = concat!("Returns a color control string as defined in [", stringify!($color), "] based on [ColorMode].")]
     #[doc = "# Examples"]
     #[doc = "```"]
-    #[doc = concat!("use dmntk_common::{ColorMode, ", stringify!($name), ", ", stringify!($color), "};")]
+    #[doc = concat!("use dmntk_common_1::{ColorMode, ", stringify!($name), ", ", stringify!($color), "};")]
     #[doc = ""]
     #[doc = concat!("assert_eq!(", stringify!($color), ", ", stringify!($name), "!(ColorMode::On));")]
     #[doc = concat!("assert_eq!(\"\"", ", ", stringify!($name), "!(ColorMode::Off));")]
@@ -164,7 +164,7 @@ macro_rules! make_color_macro {
     #[macro_export]
     macro_rules! $name {
       ($color_mode:expr) => {{
-        use dmntk_common::$color;
+        use dmntk_common_1::$color;
         match $color_mode {
           ColorMode::On => $color,
           _ => "",

@@ -33,7 +33,7 @@
 use crate::context::FeelContext;
 use crate::values::Value;
 use crate::{scope, value_number, FeelNumber, FeelScope, Name};
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 
 #[test]
 fn test_scope_default() {

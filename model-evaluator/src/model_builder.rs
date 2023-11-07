@@ -39,7 +39,7 @@ use crate::item_definition::ItemDefinitionEvaluator;
 use crate::item_definition_context::ItemDefinitionContextEvaluator;
 use crate::item_definition_type::{InformationItemTypes, ItemDefinitionTypeEvaluator};
 use crate::model_definitions::{DefDefinitions, DefKey, Invocables};
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::Name;
 use dmntk_model::Definitions;
 use std::cell::RefCell;

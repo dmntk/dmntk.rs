@@ -34,7 +34,7 @@
 
 use crate::point::Point;
 use crate::rect::Rect;
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// Recognizer errors.
 #[derive(ToErrorMessage)]

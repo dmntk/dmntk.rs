@@ -75,7 +75,7 @@ const HEADER: &str = r#"/*
 "#;
 
 const USE_CLAUSE: &str = r#"
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 "#;
 
 /// Extracts parsing tables and generates the output code.

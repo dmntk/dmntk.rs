@@ -37,7 +37,7 @@ use crate::context::FeelContext;
 use crate::function::FunctionBody;
 use crate::values::{Value, Values};
 use crate::{value_null, value_number, FeelNumber, FeelScope, FeelType, Name, ToFeelString};
-use dmntk_common::Jsonify;
+use dmntk_common_1::Jsonify;
 use dmntk_feel_temporal::{
     FeelDate, FeelDateTime, FeelDaysAndTimeDuration, FeelTime, FeelYearsAndMonthsDuration,
 };

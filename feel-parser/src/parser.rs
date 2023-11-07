@@ -37,7 +37,7 @@ use crate::lalr::*;
 use crate::lexer::*;
 use crate::scope::ParsingScope;
 use crate::AstNode;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::{FeelType, Name};
 
 enum Action {

@@ -35,7 +35,7 @@
 use crate::errors::*;
 use crate::lalr::TokenType;
 use crate::scope::ParsingScope;
-use dmntk_common::Result;
+use dmntk_common_1::Result;
 use dmntk_feel::Name;
 
 /// Definition of a single space character.
