@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-common"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | Common definitions"
 documentation = "https://docs.rs/dmntk-common"
