@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel-evaluator"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | FEEL evaluator"
 documentation = "https://docs.rs/dmntk-feel-evaluator"

@@ -36,21 +36,21 @@ use dmntk_examples::decision_tables::H_000010;
 
 #[test]
 fn test_dt_0001() {
-  let _decision_table = builder::recognize_decision_table(H_000010, false).unwrap();
-  // FIXME change to assert
-  // println!("{}", decision_table);
+    let _decision_table = builder::recognize_decision_table(H_000010, false).unwrap();
+    // FIXME change to assert
+    // println!("{}", decision_table);
 }
 
 #[test]
 fn ex_0001() {
-  let _decision_table = builder::recognize_decision_table(EX_01, false).unwrap();
-  // FIXME change to assert
-  // println!("{}", decision_table);
+    let _decision_table = builder::recognize_decision_table(EX_01, false).unwrap();
+    // FIXME change to assert
+    // println!("{}", decision_table);
 }
 
 #[test]
 fn ex_0064() {
-  let _decision_table = builder::recognize_decision_table(EX_07, false).unwrap();
-  // FIXME change to assert
-  // println!("{}", decision_table);
+    let _decision_table = builder::recognize_decision_table(EX_07, false).unwrap();
+    // FIXME change to assert
+    // println!("{}", decision_table);
 }

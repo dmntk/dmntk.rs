@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | FEEL definitions"
 documentation = "https://docs.rs/dmntk-feel"

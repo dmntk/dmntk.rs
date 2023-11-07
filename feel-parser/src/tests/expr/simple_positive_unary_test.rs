@@ -37,60 +37,60 @@ use dmntk_feel::Name;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"<2"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"<2"#,
+        r#"
        UnaryLt
        └─ Numeric
           └─ `2.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#" <= 12.465"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#" <= 12.465"#,
+        r#"
        UnaryLe
        └─ Numeric
           └─ `12.465`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#" > 50"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#" > 50"#,
+        r#"
        UnaryGt
        └─ Numeric
           └─ `50.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0004() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#" >= time("10:23")"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#" >= time("10:23")"#,
+        r#"
        UnaryGe
        └─ FunctionInvocation
           ├─ Name
@@ -99,22 +99,22 @@ fn _0004() {
              └─ String
                 └─ `10:23`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0005() {
-  let scope = scope!();
-  let mut ctx = ParsingContext::default();
-  let name_power = Name::from("power");
-  ctx.set_name(name_power);
-  scope.set_context("engine".into(), ctx);
-  accept(
-    &scope,
-    StartExpression,
-    r#" >= engine.power"#,
-    r#"
+    let scope = scope!();
+    let mut ctx = ParsingContext::default();
+    let name_power = Name::from("power");
+    ctx.set_name(name_power);
+    scope.set_context("engine".into(), ctx);
+    accept(
+        &scope,
+        StartExpression,
+        r#" >= engine.power"#,
+        r#"
        UnaryGe
        └─ QualifiedName
           ├─ Name
@@ -122,20 +122,20 @@ fn _0005() {
           └─ Name
              └─ `power`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0006() {
-  let scope = scope!();
-  scope.set_name("engine".into());
-  scope.set_name("power".into());
-  accept(
-    &scope,
-    StartExpression,
-    r#" >= engine.power"#,
-    r#"
+    let scope = scope!();
+    scope.set_name("engine".into());
+    scope.set_name("power".into());
+    accept(
+        &scope,
+        StartExpression,
+        r#" >= engine.power"#,
+        r#"
        UnaryGe
        └─ QualifiedName
           ├─ Name
@@ -143,13 +143,13 @@ fn _0006() {
           └─ Name
              └─ `power`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 #[should_panic]
 fn _0007() {
-  let scope = scope!();
-  accept(&scope, StartExpression, r#" < null"#, r#""#, false);
+    let scope = scope!();
+    accept(&scope, StartExpression, r#" < null"#, r#""#, false);
 }

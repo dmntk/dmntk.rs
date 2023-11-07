@@ -52,46 +52,73 @@ const CONTENT_TYPE: &str = "application/json";
 /// Handler for evaluating invocable identified
 /// by unique name in namespace represented by RDNN.
 #[post("/evaluate/{path:.*}")]
-async fn evaluate(path: web::Path<String>, request_body: String, data: web::Data<ApplicationData>) -> HttpResponse {
-  let workspace: &Workspaces = data.workspaces.borrow();
-  match dmntk_evaluator::evaluate_context(&FeelScope::default(), &request_body).and_then(|input_data| workspace.evaluate(&path, &input_data)) {
-    Ok(value) => HttpResponse::Ok().content_type(CONTENT_TYPE).body(format!(r#"{{"data":{}}}"#, value.jsonify())),
-    Err(reason) => HttpResponse::Ok().content_type(CONTENT_TYPE).body(format!(r#"{{"errors":[{{"detail":"{reason}"}}]}}"#)),
-  }
+async fn evaluate(
+    path: web::Path<String>,
+    request_body: String,
+    data: web::Data<ApplicationData>,
+) -> HttpResponse {
+    let workspace: &Workspaces = data.workspaces.borrow();
+    match dmntk_evaluator::evaluate_context(&FeelScope::default(), &request_body)
+        .and_then(|input_data| workspace.evaluate(&path, &input_data))
+    {
+        Ok(value) => HttpResponse::Ok()
+            .content_type(CONTENT_TYPE)
+            .body(format!(r#"{{"data":{}}}"#, value.jsonify())),
+        Err(reason) => HttpResponse::Ok()
+            .content_type(CONTENT_TYPE)
+            .body(format!(r#"{{"errors":[{{"detail":"{reason}"}}]}}"#)),
+    }
 }
 
 /// Handler for 404 errors.
 async fn not_found() -> HttpResponse {
-  HttpResponse::NotFound().content_type(CONTENT_TYPE).body(r#"{"errors":[{"detail":"endpoint not found"}]}"#)
+    HttpResponse::NotFound()
+        .content_type(CONTENT_TYPE)
+        .body(r#"{"errors":[{"detail":"endpoint not found"}]}"#)
 }
 
 #[cfg(feature = "tck")]
 fn config(cfg: &mut web::ServiceConfig) {
-  cfg.service(crate::tck::post_tck_evaluate);
+    cfg.service(crate::tck::post_tck_evaluate);
 }
 
 #[cfg(not(feature = "tck"))]
 fn config(cfg: &mut web::ServiceConfig) {
-  cfg.service(evaluate);
+    cfg.service(evaluate);
 }
 
 /// Starts the server.
-pub async fn start_server(opt_host: Option<String>, opt_port: Option<String>, opt_dir: Option<String>, colors: ColorPalette, verbose: bool) -> io::Result<()> {
-  let application_data = web::Data::new(ApplicationData {
-    workspaces: Arc::new(Workspaces::new(&get_root_dir(opt_dir), colors.clone(), verbose)),
-  });
-  let address = get_server_address(opt_host, opt_port);
-  println!("{1}dmntk{0} {2}{address}{0}", colors.reset(), colors.blue(), colors.yellow());
-  HttpServer::new(move || {
-    App::new()
-      .app_data(application_data.clone())
-      .app_data(web::PayloadConfig::new(4 * 1024 * 1024))
-      .configure(config)
-      .default_service(web::route().to(not_found))
-  })
-  .bind(address)?
-  .run()
-  .await
+pub async fn start_server(
+    opt_host: Option<String>,
+    opt_port: Option<String>,
+    opt_dir: Option<String>,
+    colors: ColorPalette,
+    verbose: bool,
+) -> io::Result<()> {
+    let application_data = web::Data::new(ApplicationData {
+        workspaces: Arc::new(Workspaces::new(
+            &get_root_dir(opt_dir),
+            colors.clone(),
+            verbose,
+        )),
+    });
+    let address = get_server_address(opt_host, opt_port);
+    println!(
+        "{1}dmntk{0} {2}{address}{0}",
+        colors.reset(),
+        colors.blue(),
+        colors.yellow()
+    );
+    HttpServer::new(move || {
+        App::new()
+            .app_data(application_data.clone())
+            .app_data(web::PayloadConfig::new(4 * 1024 * 1024))
+            .configure(config)
+            .default_service(web::route().to(not_found))
+    })
+    .bind(address)?
+    .run()
+    .await
 }
 
 /// Returns the host address and the port number, the server will start to listen on.
@@ -108,40 +135,49 @@ pub async fn start_server(opt_host: Option<String>, opt_port: Option<String>, op
 /// - `DMNTK_DEFAULT_HOST` and `DMNTK_DEFAULT_PORT` constants.
 ///
 fn get_server_address(opt_host: Option<String>, opt_port: Option<String>) -> String {
-  // resolve IP address
-  let mut host = DMNTK_DEFAULT_HOST.to_string();
-  if let Ok(host_ip_address) = env::var(DMNTK_HOST_VARIABLE) {
-    if is_valid_ip_address(&host_ip_address) {
-      host = host_ip_address;
-    } else {
-      eprintln!("invalid host address specified in environment variable {}: {}", DMNTK_HOST_VARIABLE, host_ip_address);
+    // resolve IP address
+    let mut host = DMNTK_DEFAULT_HOST.to_string();
+    if let Ok(host_ip_address) = env::var(DMNTK_HOST_VARIABLE) {
+        if is_valid_ip_address(&host_ip_address) {
+            host = host_ip_address;
+        } else {
+            eprintln!(
+                "invalid host address specified in environment variable {}: {}",
+                DMNTK_HOST_VARIABLE, host_ip_address
+            );
+        }
     }
-  }
-  if let Some(host_ip_address) = opt_host {
-    if is_valid_ip_address(&host_ip_address) {
-      host = host_ip_address;
-    } else {
-      eprintln!("invalid host address given as command option: {}", host_ip_address);
+    if let Some(host_ip_address) = opt_host {
+        if is_valid_ip_address(&host_ip_address) {
+            host = host_ip_address;
+        } else {
+            eprintln!(
+                "invalid host address given as command option: {}",
+                host_ip_address
+            );
+        }
     }
-  }
-  // resolve IP port
-  let mut port: u16 = DMNTK_DEFAULT_PORT;
-  if let Ok(p_str) = env::var(DMNTK_PORT_VARIABLE) {
-    if let Ok(p) = u16::from_str(&p_str) {
-      port = p;
-    } else {
-      eprintln!("invalid port number specified in environment variable {}: {}", DMNTK_PORT_VARIABLE, p_str);
+    // resolve IP port
+    let mut port: u16 = DMNTK_DEFAULT_PORT;
+    if let Ok(p_str) = env::var(DMNTK_PORT_VARIABLE) {
+        if let Ok(p) = u16::from_str(&p_str) {
+            port = p;
+        } else {
+            eprintln!(
+                "invalid port number specified in environment variable {}: {}",
+                DMNTK_PORT_VARIABLE, p_str
+            );
+        }
     }
-  }
-  if let Some(p_str) = opt_port {
-    if let Ok(p) = u16::from_str(&p_str) {
-      port = p;
-    } else {
-      eprintln!("invalid port number specified as command option: {}", p_str);
+    if let Some(p_str) = opt_port {
+        if let Ok(p) = u16::from_str(&p_str) {
+            port = p;
+        } else {
+            eprintln!("invalid port number specified as command option: {}", p_str);
+        }
     }
-  }
-  let server_address = format!("{host}:{port}");
-  server_address
+    let server_address = format!("{host}:{port}");
+    server_address
 }
 
 /// Checks if the specified IP address is correct.
@@ -150,27 +186,30 @@ fn get_server_address(opt_host: Option<String>, opt_port: Option<String>) -> Str
 /// when the [Ipv4Addr](std::net::Ipv4Addr)
 /// and [Ipv6Addr](std::net::Ipv6Addr) stabilize.
 fn is_valid_ip_address(ip: &str) -> bool {
-  ip == "localhost" || ip.parse::<IpAddr>().is_ok()
+    ip == "localhost" || ip.parse::<IpAddr>().is_ok()
 }
 
 /// Returns the root directory for loading workspaces.
 fn get_root_dir(opt_dir: Option<String>) -> PathBuf {
-  let current_dir_path = env::current_dir().expect("failed to retrieve current directory");
-  if let Ok(s) = env::var(DMNTK_DIR_VARIABLE) {
-    let dir_path = Path::new(&s);
-    if dir_path.exists() && dir_path.is_dir() {
-      return dir_path.into();
-    } else {
-      eprintln!("invalid directory specified in environment variable {}: {}", DMNTK_DIR_VARIABLE, s);
+    let current_dir_path = env::current_dir().expect("failed to retrieve current directory");
+    if let Ok(s) = env::var(DMNTK_DIR_VARIABLE) {
+        let dir_path = Path::new(&s);
+        if dir_path.exists() && dir_path.is_dir() {
+            return dir_path.into();
+        } else {
+            eprintln!(
+                "invalid directory specified in environment variable {}: {}",
+                DMNTK_DIR_VARIABLE, s
+            );
+        }
     }
-  }
-  if let Some(s) = opt_dir {
-    let dir_path = Path::new(&s);
-    if dir_path.exists() && dir_path.is_dir() {
-      return dir_path.into();
-    } else {
-      eprintln!("invalid directory specified as command option: {}", s);
+    if let Some(s) = opt_dir {
+        let dir_path = Path::new(&s);
+        if dir_path.exists() && dir_path.is_dir() {
+            return dir_path.into();
+        } else {
+            eprintln!("invalid directory specified as command option: {}", s);
+        }
     }
-  }
-  current_dir_path
+    current_dir_path
 }

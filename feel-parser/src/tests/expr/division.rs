@@ -35,48 +35,48 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "1/2",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "1/2",
+        r#"
        Div
        ├─ Numeric
        │  └─ `1.`
        └─ Numeric
           └─ `2.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 / 3",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 / 3",
+        r#"
        Div
        ├─ Numeric
        │  └─ `5.`
        └─ Numeric
           └─ `3.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 / 3 / 2",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 / 3 / 2",
+        r#"
        Div
        ├─ Div
        │  ├─ Numeric
@@ -86,6 +86,6 @@ fn _0003() {
        └─ Numeric
           └─ `2.`
     "#,
-    false,
-  );
+        false,
+    );
 }

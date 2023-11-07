@@ -35,12 +35,12 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "[1,2,3][2]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "[1,2,3][2]",
+        r#"
        Filter
        ├─ List
        │  ├─ Numeric
@@ -52,18 +52,18 @@ fn _0001() {
        └─ Numeric
           └─ `2.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "[1,2,3][item >= 2]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "[1,2,3][item >= 2]",
+        r#"
        Filter
        ├─ List
        │  ├─ Numeric
@@ -78,18 +78,18 @@ fn _0002() {
           └─ Numeric
              └─ `2.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "EmployeeTable[name=LastName]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "EmployeeTable[name=LastName]",
+        r#"
        Filter
        ├─ Name
        │  └─ `EmployeeTable`
@@ -99,18 +99,18 @@ fn _0003() {
           └─ Name
              └─ `LastName`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0004() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "EmployeeTable[1].deptNum",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "EmployeeTable[1].deptNum",
+        r#"
        Path
        ├─ Filter
        │  ├─ Name
@@ -120,18 +120,18 @@ fn _0004() {
        └─ Name
           └─ `deptNum`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0005() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"DeptTable[number=EmployeeTable[name=LastName].deptNum[1]].manager[1]"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"DeptTable[number=EmployeeTable[name=LastName].deptNum[1]].manager[1]"#,
+        r#"
        Filter
        ├─ Path
        │  ├─ Filter
@@ -159,20 +159,20 @@ fn _0005() {
        └─ Numeric
           └─ `1.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0006() {
-  let scope = scope!();
-  scope.set_name("?".into());
-  scope.set_name("Lender Name".into());
-  accept(
-    &scope,
-    StartExpression,
-    r#"count(Ratings[Lender Name = ?.Lender Name and Customer Rating > 4]) > 0"#,
-    r#"
+    let scope = scope!();
+    scope.set_name("?".into());
+    scope.set_name("Lender Name".into());
+    accept(
+        &scope,
+        StartExpression,
+        r#"count(Ratings[Lender Name = ?.Lender Name and Customer Rating > 4]) > 0"#,
+        r#"
        Gt
        ├─ FunctionInvocation
        │  ├─ Name
@@ -198,6 +198,6 @@ fn _0006() {
        └─ Numeric
           └─ `0.`
     "#,
-    false,
-  );
+        false,
+    );
 }

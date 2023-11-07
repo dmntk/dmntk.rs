@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel-parser"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | FEEL parser"
 documentation = "https://docs.rs/dmntk-feel-parser"

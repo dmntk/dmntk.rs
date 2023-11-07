@@ -35,48 +35,48 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "1.364 = 2.9483",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "1.364 = 2.9483",
+        r#"
        Eq
        ├─ Numeric
        │  └─ `1.364`
        └─ Numeric
           └─ `2.9483`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5.678 != 5.679",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5.678 != 5.679",
+        r#"
        Nq
        ├─ Numeric
        │  └─ `5.678`
        └─ Numeric
           └─ `5.679`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "-23.45 < -5.28374658493",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "-23.45 < -5.28374658493",
+        r#"
        Lt
        ├─ Neg
        │  └─ Numeric
@@ -85,18 +85,18 @@ fn _0003() {
           └─ Numeric
              └─ `5.28374658493`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0004() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "-23.45 <= -5.28374658493",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "-23.45 <= -5.28374658493",
+        r#"
        Le
        ├─ Neg
        │  └─ Numeric
@@ -105,54 +105,54 @@ fn _0004() {
           └─ Numeric
              └─ `5.28374658493`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0005() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 > 3",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 > 3",
+        r#"
        Gt
        ├─ Numeric
        │  └─ `5.`
        └─ Numeric
           └─ `3.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0006() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 >= 3",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 >= 3",
+        r#"
        Ge
        ├─ Numeric
        │  └─ `5.`
        └─ Numeric
           └─ `3.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0007() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 between 1 and 10",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 between 1 and 10",
+        r#"
        Between
        ├─ Numeric
        │  └─ `5.`
@@ -161,36 +161,36 @@ fn _0007() {
        └─ Numeric
           └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0008() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 in 10",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 in 10",
+        r#"
        In
        ├─ Numeric
        │  └─ `5.`
        └─ Numeric
           └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0009() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 in <10",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 in <10",
+        r#"
        In
        ├─ Numeric
        │  └─ `5.`
@@ -198,18 +198,18 @@ fn _0009() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0010() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 in <=10",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 in <=10",
+        r#"
        In
        ├─ Numeric
        │  └─ `5.`
@@ -217,18 +217,18 @@ fn _0010() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0011() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "18 in >8",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "18 in >8",
+        r#"
        In
        ├─ Numeric
        │  └─ `18.`
@@ -236,18 +236,18 @@ fn _0011() {
           └─ Numeric
              └─ `8.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0012() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "18 in >=8",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "18 in >=8",
+        r#"
        In
        ├─ Numeric
        │  └─ `18.`
@@ -255,18 +255,18 @@ fn _0012() {
           └─ Numeric
              └─ `8.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0013() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "18 in [1..100]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "18 in [1..100]",
+        r#"
        In
        ├─ Numeric
        │  └─ `18.`
@@ -278,18 +278,18 @@ fn _0013() {
              └─ Numeric
                 └─ `100.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0014() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "18 in (1..100)",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "18 in (1..100)",
+        r#"
        In
        ├─ Numeric
        │  └─ `18.`
@@ -301,18 +301,18 @@ fn _0014() {
              └─ Numeric
                 └─ `100.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0015() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "5 in (1,2,3,4,5,6,7)",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "5 in (1,2,3,4,5,6,7)",
+        r#"
        In
        ├─ Numeric
        │  └─ `5.`
@@ -332,6 +332,6 @@ fn _0015() {
           └─ Numeric
              └─ `7.`
     "#,
-    false,
-  );
+        false,
+    );
 }

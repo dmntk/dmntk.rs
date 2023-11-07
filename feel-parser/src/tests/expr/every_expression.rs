@@ -35,12 +35,12 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"every n in [1,2,3] satisfies n > 1.5"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"every n in [1,2,3] satisfies n > 1.5"#,
+        r#"
        Every
        ├─ QuantifiedContexts
        │  └─ QuantifiedContext
@@ -60,18 +60,18 @@ fn _0001() {
              └─ Numeric
                 └─ `1.5`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"every n in [1,2,3] satisfies n + 1 > 1.5"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"every n in [1,2,3] satisfies n + 1 > 1.5"#,
+        r#"
        Every
        ├─ QuantifiedContexts
        │  └─ QuantifiedContext
@@ -94,18 +94,18 @@ fn _0002() {
              └─ Numeric
                 └─ `1.5`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"every n in [1,2,3], m in <= 100 satisfies n > 1.5 * m"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"every n in [1,2,3], m in <= 100 satisfies n > 1.5 * m"#,
+        r#"
        Every
        ├─ QuantifiedContexts
        │  ├─ QuantifiedContext
@@ -134,18 +134,18 @@ fn _0003() {
                 └─ Name
                    └─ `m`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0004() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    r#"every n in [1..3] satisfies n > 1.5"#,
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        r#"every n in [1..3] satisfies n > 1.5"#,
+        r#"
        Every
        ├─ QuantifiedContexts
        │  └─ QuantifiedContext
@@ -165,6 +165,6 @@ fn _0004() {
              └─ Numeric
                 └─ `1.5`
     "#,
-    false,
-  );
+        false,
+    );
 }

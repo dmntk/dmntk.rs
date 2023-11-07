@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-gendoc"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | Documentation generator"
 documentation = "https://docs.rs/dmntk-model"

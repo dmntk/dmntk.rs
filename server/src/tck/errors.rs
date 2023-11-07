@@ -39,5 +39,5 @@ use dmntk_common::{DmntkError, ToErrorMessage};
 struct TckServerError(String);
 
 pub fn err_missing_attribute(name: &str) -> DmntkError {
-  TckServerError(format!("missing attribute: {name}")).into()
+    TckServerError(format!("missing attribute: {name}")).into()
 }

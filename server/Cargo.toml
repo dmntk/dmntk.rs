@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-server"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | API server"
 documentation = "https://docs.rs/dmntk-server"

@@ -86,6 +86,12 @@ const INPUT_DATA: &str = r#"
 
 #[test]
 fn _0001() {
-  let ctx = context(INPUT_DATA);
-  assert_decision(&MODEL_EVALUATOR, &MODEL_NAMESPACE, "Join", &ctx, r#""Smith""#);
+    let ctx = context(INPUT_DATA);
+    assert_decision(
+        &MODEL_EVALUATOR,
+        &MODEL_NAMESPACE,
+        "Join",
+        &ctx,
+        r#""Smith""#,
+    );
 }

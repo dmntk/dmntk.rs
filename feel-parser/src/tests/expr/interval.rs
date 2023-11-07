@@ -36,12 +36,12 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "[1..10]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "[1..10]",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ Numeric
@@ -50,18 +50,18 @@ fn _0001() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0002() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "(1..10]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "(1..10]",
+        r#"
        Range
        ├─ IntervalStart (opened)
        │  └─ Numeric
@@ -70,18 +70,18 @@ fn _0002() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0003() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "[1..10)",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "[1..10)",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ Numeric
@@ -90,18 +90,18 @@ fn _0003() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0004() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "(1..10)",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "(1..10)",
+        r#"
        Range
        ├─ IntervalStart (opened)
        │  └─ Numeric
@@ -110,18 +110,18 @@ fn _0004() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0005() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "]1..10]",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "]1..10]",
+        r#"
        Range
        ├─ IntervalStart (opened)
        │  └─ Numeric
@@ -130,18 +130,18 @@ fn _0005() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0006() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "[1..10[",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "[1..10[",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ Numeric
@@ -150,18 +150,18 @@ fn _0006() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0007() {
-  let scope = scope!();
-  accept(
-    &scope,
-    StartExpression,
-    "]1..10[",
-    r#"
+    let scope = scope!();
+    accept(
+        &scope,
+        StartExpression,
+        "]1..10[",
+        r#"
        Range
        ├─ IntervalStart (opened)
        │  └─ Numeric
@@ -170,20 +170,20 @@ fn _0007() {
           └─ Numeric
              └─ `10.`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0008() {
-  let scope = scope!();
-  scope.set_name("a".into());
-  scope.set_name("b".into());
-  accept(
-    &scope,
-    StartExpression,
-    "[a..b]",
-    r#"
+    let scope = scope!();
+    scope.set_name("a".into());
+    scope.set_name("b".into());
+    accept(
+        &scope,
+        StartExpression,
+        "[a..b]",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ QualifiedName
@@ -194,22 +194,22 @@ fn _0008() {
              └─ Name
                 └─ `b`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _0009() {
-  let scope = scope!();
-  let mut ctx = ParsingContext::default();
-  ctx.set_name("start".into());
-  ctx.set_name("end".into());
-  scope.set_context("r".into(), ctx);
-  accept(
-    &scope,
-    StartExpression,
-    "[r.start..r.end]",
-    r#"
+    let scope = scope!();
+    let mut ctx = ParsingContext::default();
+    ctx.set_name("start".into());
+    ctx.set_name("end".into());
+    scope.set_context("r".into(), ctx);
+    accept(
+        &scope,
+        StartExpression,
+        "[r.start..r.end]",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ QualifiedName
@@ -224,21 +224,21 @@ fn _0009() {
              └─ Name
                 └─ `end`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _00010() {
-  let scope = scope!();
-  scope.set_name("r".into());
-  scope.set_name("start".into());
-  scope.set_name("end".into());
-  accept(
-    &scope,
-    StartExpression,
-    "[r.start..r.end]",
-    r#"
+    let scope = scope!();
+    scope.set_name("r".into());
+    scope.set_name("start".into());
+    scope.set_name("end".into());
+    accept(
+        &scope,
+        StartExpression,
+        "[r.start..r.end]",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ QualifiedName
@@ -253,22 +253,22 @@ fn _00010() {
              └─ Name
                 └─ `end`
     "#,
-    false,
-  );
+        false,
+    );
 }
 
 #[test]
 fn _00011() {
-  let scope = scope!();
-  scope.set_name("r".into());
-  scope.set_name("s".into());
-  scope.set_name("start".into());
-  scope.set_name("end".into());
-  accept(
-    &scope,
-    StartExpression,
-    "[r.start..r.s.end]",
-    r#"
+    let scope = scope!();
+    scope.set_name("r".into());
+    scope.set_name("s".into());
+    scope.set_name("start".into());
+    scope.set_name("end".into());
+    accept(
+        &scope,
+        StartExpression,
+        "[r.start..r.s.end]",
+        r#"
        Range
        ├─ IntervalStart (closed)
        │  └─ QualifiedName
@@ -285,6 +285,6 @@ fn _00011() {
              └─ Name
                 └─ `end`
     "#,
-    false,
-  );
+        false,
+    );
 }

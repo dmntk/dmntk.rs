@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-recognizer"
-version.workspace = true
+version = "0.3.1"
 authors.workspace = true
 description = "DMNTK | Decision Table Recognizer"
 documentation = "https://docs.rs/dmntk-recognizer"
