@@ -1,5 +1,5 @@
 [package]
-name = "dmntk-common"
+name = "dmntk-common-1"
 version.workspace = true
 authors.workspace = true
 description = "DMNTK | Common definitions"
