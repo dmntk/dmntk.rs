@@ -30,7 +30,7 @@
  * limitations under the License.
  */
 
-use dmntk_common::{DmntkError, ToErrorMessage};
+use dmntk_common_1::{DmntkError, ToErrorMessage};
 
 /// `FEEL` number errors.
 #[derive(ToErrorMessage)]

@@ -37,7 +37,7 @@
 
 use crate::errors::*;
 use dfp_number_sys::*;
-use dmntk_common::{DmntkError, Jsonify};
+use dmntk_common_1::{DmntkError, Jsonify};
 use std::cmp::Ordering;
 use std::fmt;
 use std::fmt::{Debug, Display};
