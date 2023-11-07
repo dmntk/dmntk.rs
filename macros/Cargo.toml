@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-macros"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | Procedural and derive macros"
 documentation = "https://docs.rs/dmntk-macros"
