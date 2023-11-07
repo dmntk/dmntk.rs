@@ -12,5 +12,5 @@ edition.workspace = true
 
 [dependencies]
 dfp-number-sys.workspace = true
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-macros.workspace = true

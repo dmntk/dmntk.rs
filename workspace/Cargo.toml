@@ -11,7 +11,7 @@ edition.workspace = true
 [dependencies]
 urlencoding.workspace = true
 walkdir.workspace = true
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-feel.workspace = true
 dmntk-feel-evaluator.workspace = true
 dmntk-macros.workspace = true

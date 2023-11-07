@@ -9,7 +9,7 @@ license.workspace = true
 edition.workspace = true
 
 [dependencies]
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-macros.workspace = true
 dmntk-model.workspace = true
 

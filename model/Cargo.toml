@@ -11,7 +11,7 @@ edition.workspace = true
 [dependencies]
 petgraph.workspace = true
 roxmltree.workspace = true
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-examples.workspace = true
 dmntk-feel.workspace = true
 dmntk-feel-parser.workspace = true

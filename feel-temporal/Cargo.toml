@@ -13,6 +13,6 @@ chrono.workspace = true
 chrono-tz.workspace = true
 once_cell.workspace = true
 regex.workspace = true
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-feel-number.workspace = true
 dmntk-macros.workspace = true

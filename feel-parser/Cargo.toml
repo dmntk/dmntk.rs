@@ -12,7 +12,7 @@ edition.workspace = true
 parsing-tables = []
 
 [dependencies]
-dmntk-common.workspace = true
+dmntk-common-1.workspace = true
 dmntk-feel.workspace = true
 dmntk-macros.workspace = true
 
