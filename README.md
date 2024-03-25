@@ -1,3 +1,3 @@
 **This project is deprecated in favor of**
 
-[Decision Toolkit](https://github.com/dsntk)
+# [Decision Toolkit](https://github.com/dsntk)
