@@ -41,7 +41,7 @@ use uuid::Uuid;
 /// The string should be 36 characters long.
 ///
 /// ```
-/// use dmntk_common_1::gen_id;
+/// use dmntk_common::gen_id;
 ///
 /// assert_eq!(36, gen_id().len());
 /// ```
@@ -50,24 +50,24 @@ use uuid::Uuid;
 /// * [Version 4 UUIDs in RFC4122](https://www.rfc-editor.org/rfc/rfc4122#section-4.4)
 ///
 pub fn gen_id() -> String {
-    Uuid::new_v4().to_string()
+  Uuid::new_v4().to_string()
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+  use super::*;
 
-    #[test]
-    fn test_valid_references() {
-        let id = gen_id();
-        for (i, ch) in id.chars().enumerate() {
-            if matches!(i, 8 | 13 | 18 | 23) {
-                assert_eq!(ch, '-');
-            } else {
-                assert!(matches!(ch, 'a'..='f' | '0'..='9'))
-            }
-        }
+  #[test]
+  fn test_valid_references() {
+    let id = gen_id();
+    for (i, ch) in id.chars().enumerate() {
+      if matches!(i, 8 | 13 | 18 | 23) {
+        assert_eq!(ch, '-');
+      } else {
+        assert!(matches!(ch, 'a'..='f' | '0'..='9'))
+      }
     }
+  }
 }
 
 // granskade

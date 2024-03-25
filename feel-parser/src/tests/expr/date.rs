@@ -35,12 +35,12 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn date_1() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"date("2012-12-25")"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"date("2012-12-25")"#,
+    r#"
        FunctionInvocation
        ├─ Name
        │  └─ `date`
@@ -48,6 +48,6 @@ fn date_1() {
           └─ String
              └─ `2012-12-25`
     "#,
-        false,
-    );
+    false,
+  );
 }

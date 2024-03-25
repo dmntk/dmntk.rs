@@ -35,12 +35,12 @@ use crate::lalr::TokenType::StartTextualExpressions;
 
 #[test]
 fn _0001() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartTextualExpressions,
-        r#"1,2,3"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartTextualExpressions,
+    r#"1,2,3"#,
+    r#"
        ExpressionList
        ├─ Numeric
        │  └─ `1.`
@@ -49,21 +49,21 @@ fn _0001() {
        └─ Numeric
           └─ `3.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0002() {
-    let scope = scope!();
-    scope.set_name("a".into());
-    scope.set_name("b".into());
-    scope.set_name("c".into());
-    accept(
-        &scope,
-        StartTextualExpressions,
-        r#"a,b,c"#,
-        r#"
+  let scope = scope!();
+  scope.set_name("a".into());
+  scope.set_name("b".into());
+  scope.set_name("c".into());
+  accept(
+    &scope,
+    StartTextualExpressions,
+    r#"a,b,c"#,
+    r#"
        ExpressionList
        ├─ Name
        │  └─ `a`
@@ -72,21 +72,21 @@ fn _0002() {
        └─ Name
           └─ `c`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0003() {
-    let scope = scope!();
-    scope.set_name("a".into());
-    scope.set_name("b".into());
-    scope.set_name("c".into());
-    accept(
-        &scope,
-        StartTextualExpressions,
-        r#"a+b,b-c,c**a,(["a","b","c"])"#,
-        r#"
+  let scope = scope!();
+  scope.set_name("a".into());
+  scope.set_name("b".into());
+  scope.set_name("c".into());
+  accept(
+    &scope,
+    StartTextualExpressions,
+    r#"a+b,b-c,c**a,(["a","b","c"])"#,
+    r#"
        ExpressionList
        ├─ Add
        │  ├─ Name
@@ -111,6 +111,6 @@ fn _0003() {
           └─ String
              └─ `c`
     "#,
-        false,
-    );
+    false,
+  );
 }

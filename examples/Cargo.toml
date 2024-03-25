@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-examples"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | Examples"
 documentation = "https://docs.rs/dmntk-examples"

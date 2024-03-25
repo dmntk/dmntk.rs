@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | FEEL definitions"
 documentation = "https://docs.rs/dmntk-feel"
@@ -14,7 +14,7 @@ chrono-tz.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 regex.workspace = true
-dmntk-common-1.workspace = true
+dmntk-common.workspace = true
 dmntk-feel-number.workspace = true
 dmntk-feel-temporal.workspace = true
 dmntk-macros.workspace = true

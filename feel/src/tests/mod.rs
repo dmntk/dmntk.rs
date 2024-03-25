@@ -65,25 +65,14 @@ static T_LIST_D: Lazy<FeelType> = Lazy::new(|| FeelType::list(T_ANY));
 static T_CONTEXT_A: Lazy<FeelType> = Lazy::new(|| FeelType::context(&[(&NAME_A, T_NUMBER)]));
 static T_CONTEXT_B: Lazy<FeelType> = Lazy::new(|| FeelType::context(&[(&NAME_B, T_BOOLEAN)]));
 static T_CONTEXT_C: Lazy<FeelType> = Lazy::new(|| FeelType::context(&[(&NAME_A, T_STRING)]));
-static T_CONTEXT_A_B: Lazy<FeelType> =
-    Lazy::new(|| FeelType::context(&[(&NAME_A, T_NUMBER), (&NAME_B, T_BOOLEAN)]));
-static T_CONTEXT_A_B_C: Lazy<FeelType> = Lazy::new(|| {
-    FeelType::context(&[
-        (&NAME_A, T_NUMBER),
-        (&NAME_B, T_BOOLEAN),
-        (&NAME_C, T_STRING),
-    ])
-});
-static T_FUNCTION_A: Lazy<FeelType> =
-    Lazy::new(|| FeelType::function(&[T_NUMBER.clone(), T_NUMBER.clone()], T_NUMBER));
-static T_FUNCTION_B: Lazy<FeelType> =
-    Lazy::new(|| FeelType::function(&[T_NUMBER.clone(), T_NUMBER.clone()], T_BOOLEAN));
-static T_FUNCTION_C: Lazy<FeelType> =
-    Lazy::new(|| FeelType::function(&[T_NUMBER.clone()], T_STRING));
+static T_CONTEXT_A_B: Lazy<FeelType> = Lazy::new(|| FeelType::context(&[(&NAME_A, T_NUMBER), (&NAME_B, T_BOOLEAN)]));
+static T_CONTEXT_A_B_C: Lazy<FeelType> = Lazy::new(|| FeelType::context(&[(&NAME_A, T_NUMBER), (&NAME_B, T_BOOLEAN), (&NAME_C, T_STRING)]));
+static T_FUNCTION_A: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[T_NUMBER.clone(), T_NUMBER.clone()], T_NUMBER));
+static T_FUNCTION_B: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[T_NUMBER.clone(), T_NUMBER.clone()], T_BOOLEAN));
+static T_FUNCTION_C: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[T_NUMBER.clone()], T_STRING));
 static T_FUNCTION_D: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[], T_ANY));
 static T_FUNCTION_E: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[], T_STRING));
 static T_FUNCTION_F: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[T_ANY.clone()], T_STRING));
-static T_FUNCTION_G: Lazy<FeelType> =
-    Lazy::new(|| FeelType::function(&[T_STRING.clone()], T_STRING));
+static T_FUNCTION_G: Lazy<FeelType> = Lazy::new(|| FeelType::function(&[T_STRING.clone()], T_STRING));
 static T_RANGE_A: Lazy<FeelType> = Lazy::new(|| FeelType::range(T_NUMBER));
 static T_RANGE_B: Lazy<FeelType> = Lazy::new(|| FeelType::range(T_DATE));

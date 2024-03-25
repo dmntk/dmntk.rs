@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel-parser"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | FEEL parser"
 documentation = "https://docs.rs/dmntk-feel-parser"
@@ -12,7 +12,7 @@ edition.workspace = true
 parsing-tables = []
 
 [dependencies]
-dmntk-common-1.workspace = true
+dmntk-common.workspace = true
 dmntk-feel.workspace = true
 dmntk-macros.workspace = true
 

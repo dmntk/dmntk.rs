@@ -35,76 +35,76 @@ use crate::lalr::TokenType::{StartContext, StartExpression};
 
 #[test]
 fn _0001() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"  1  // eol comment
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"  1  // eol comment
          + 1"#,
-        r#"
+    r#"
        Add
        ├─ Numeric
        │  └─ `1.`
        └─ Numeric
           └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0002() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#" 1
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#" 1
           /*
           some intro waffle
           */
           + 1"#,
-        r#"
+    r#"
        Add
        ├─ Numeric
        │  └─ `1.`
        └─ Numeric
           └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0003() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"1 + /* 1 + */ 1"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"1 + /* 1 + */ 1"#,
+    r#"
        Add
        ├─ Numeric
        │  └─ `1.`
        └─ Numeric
           └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0004() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#" 1
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#" 1
           /*
           some intro waffle
           */
           + 1 // and stuff
           + 2"#,
-        r#"
+    r#"
        Add
        ├─ Add
        │  ├─ Numeric
@@ -114,41 +114,41 @@ fn _0004() {
        └─ Numeric
           └─ `2.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0005() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"
             // Some multi-line comment
             // composed from
             // multiple single-line
             // comments
             1 + 2 
     "#,
-        r#"
+    r#"
        Add
        ├─ Numeric
        │  └─ `1.`
        └─ Numeric
           └─ `2.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0006() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"
             /*
              * Some multi-line comment
              * composed from...
@@ -162,24 +162,24 @@ fn _0006() {
              
             5 * 8 
     "#,
-        r#"
+    r#"
        Mul
        ├─ Numeric
        │  └─ `5.`
        └─ Numeric
           └─ `8.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0007() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"
       /// Maybe this comment may be used
       /// for some documentation, like in Rust?
       
@@ -193,7 +193,7 @@ fn _0007() {
         A: /* This is cool :-), not like in JSON :-( */ 15 // Just set fiveteen.
       }
     "#,
-        r#"
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -201,6 +201,6 @@ fn _0007() {
           └─ Numeric
              └─ `15.`
     "#,
-        false,
-    );
+    false,
+  );
 }

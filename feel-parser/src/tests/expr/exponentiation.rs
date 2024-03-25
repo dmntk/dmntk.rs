@@ -35,48 +35,48 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "2**4",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "2**4",
+    r#"
        Exp
        ├─ Numeric
        │  └─ `2.`
        └─ Numeric
           └─ `4.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0002() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "2 ** 4",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "2 ** 4",
+    r#"
        Exp
        ├─ Numeric
        │  └─ `2.`
        └─ Numeric
           └─ `4.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0003() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "2 ** 4 ** 3",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "2 ** 4 ** 3",
+    r#"
        Exp
        ├─ Exp
        │  ├─ Numeric
@@ -86,18 +86,18 @@ fn _0003() {
        └─ Numeric
           └─ `3.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0004() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "-3 ** 2",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "-3 ** 2",
+    r#"
        Exp
        ├─ Neg
        │  └─ Numeric
@@ -105,6 +105,6 @@ fn _0004() {
        └─ Numeric
           └─ `2.`
     "#,
-        false,
-    );
+    false,
+  );
 }

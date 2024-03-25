@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel-evaluator"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | FEEL evaluator"
 documentation = "https://docs.rs/dmntk-feel-evaluator"
@@ -14,7 +14,7 @@ regex.workspace = true
 reqwest.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-dmntk-common-1.workspace = true
+dmntk-common.workspace = true
 dmntk-feel.workspace = true
 dmntk-feel-parser.workspace = true
 dmntk-feel-temporal.workspace = true

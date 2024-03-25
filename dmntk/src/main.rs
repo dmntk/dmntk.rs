@@ -38,5 +38,5 @@ mod examples;
 /// Main entrypoint of **DMNTK**.
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    actions::do_action().await
+  actions::do_action().await
 }

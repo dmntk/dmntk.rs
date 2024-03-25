@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-feel-grammar"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | FEEL grammar"
 documentation = "https://docs.rs/dmntk-feel-grammar"

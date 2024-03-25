@@ -35,12 +35,12 @@ use crate::lalr::TokenType::StartExpression;
 
 #[test]
 fn _0001() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "abs(1)",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "abs(1)",
+    r#"
        FunctionInvocation
        ├─ Name
        │  └─ `abs`
@@ -48,18 +48,18 @@ fn _0001() {
           └─ Numeric
              └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0002() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        "abs(-1)",
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    "abs(-1)",
+    r#"
        FunctionInvocation
        ├─ Name
        │  └─ `abs`
@@ -68,6 +68,6 @@ fn _0002() {
              └─ Numeric
                 └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }

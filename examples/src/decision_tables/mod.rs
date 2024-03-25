@@ -49,6 +49,4 @@ mod crosstab;
 mod horizontal;
 mod vertical;
 
-pub use crosstab::*;
 pub use horizontal::*;
-pub use vertical::*;

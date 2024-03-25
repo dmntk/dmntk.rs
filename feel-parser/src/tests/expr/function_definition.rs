@@ -36,12 +36,12 @@ use crate::lalr::TokenType::*;
 
 #[test]
 fn _0001() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"{msg: function () "hello!" }"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"{msg: function () "hello!" }"#,
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -53,18 +53,18 @@ fn _0001() {
                 └─ String
                    └─ `hello!`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0002() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"{pow: function (x: number) x * x }"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"{pow: function (x: number) x * x }"#,
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -83,18 +83,18 @@ fn _0002() {
                    └─ Name
                       └─ `x`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0003() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"{add: function (x: number, y: number) x + y }"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"{add: function (x: number, y: number) x + y }"#,
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -118,18 +118,18 @@ fn _0003() {
                    └─ Name
                       └─ `y`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0004() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"{add3: function(x:number,y:number,z:number)x+y+z}"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"{add3: function(x:number,y:number,z:number)x+y+z}"#,
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -161,18 +161,18 @@ fn _0004() {
                    └─ Name
                       └─ `z`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0005() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartContext,
-        r#"{inc: function (state) state + 1 }"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartContext,
+    r#"{inc: function (state) state + 1 }"#,
+    r#"
        Context
        └─ ContextEntry
           ├─ ContextEntryKey
@@ -191,18 +191,18 @@ fn _0005() {
                    └─ Numeric
                       └─ `1.`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0006() {
-    let scope = scope!();
-    accept(
-        &scope,
-        StartExpression,
-        r#"function(a,b) a+b"#,
-        r#"
+  let scope = scope!();
+  accept(
+    &scope,
+    StartExpression,
+    r#"function(a,b) a+b"#,
+    r#"
        FunctionDefinition
        ├─ FormalParameters
        │  ├─ FormalParameter
@@ -222,19 +222,19 @@ fn _0006() {
              └─ Name
                 └─ `b`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0007() {
-    let scope = scope!();
-    scope.set_name("a".into());
-    accept(
-        &scope,
-        StartExpression,
-        r#"function(b) a * b"#,
-        r#"
+  let scope = scope!();
+  scope.set_name("a".into());
+  accept(
+    &scope,
+    StartExpression,
+    r#"function(b) a * b"#,
+    r#"
        FunctionDefinition
        ├─ FormalParameters
        │  └─ FormalParameter
@@ -249,23 +249,23 @@ fn _0007() {
              └─ Name
                 └─ `b`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0008() {
-    let scope = scope!();
-    let mut ctx_inner = ParsingContext::default();
-    ctx_inner.set_name("c".into());
-    let mut ctx_outer = ParsingContext::default();
-    ctx_outer.set_context("b".into(), ctx_inner);
-    scope.set_context("a".into(), ctx_outer);
-    accept(
-        &scope,
-        StartExpression,
-        r#"function(x) a.b.c * x"#,
-        r#"
+  let scope = scope!();
+  let mut ctx_inner = ParsingContext::default();
+  ctx_inner.set_name("c".into());
+  let mut ctx_outer = ParsingContext::default();
+  ctx_outer.set_context("b".into(), ctx_inner);
+  scope.set_context("a".into(), ctx_outer);
+  accept(
+    &scope,
+    StartExpression,
+    r#"function(x) a.b.c * x"#,
+    r#"
        FunctionDefinition
        ├─ FormalParameters
        │  └─ FormalParameter
@@ -286,19 +286,19 @@ fn _0008() {
              └─ Name
                 └─ `x`
     "#,
-        false,
-    );
+    false,
+  );
 }
 
 #[test]
 fn _0009() {
-    let scope = scope!();
-    scope.set_name("a".into());
-    accept(
-        &scope,
-        StartExpression,
-        r#"function (b) function(c) function(d) a * b * c * d"#,
-        r#"
+  let scope = scope!();
+  scope.set_name("a".into());
+  accept(
+    &scope,
+    StartExpression,
+    r#"function (b) function(c) function(d) a * b * c * d"#,
+    r#"
        FunctionDefinition
        ├─ FormalParameters
        │  └─ FormalParameter
@@ -335,6 +335,6 @@ fn _0009() {
                          └─ Name
                             └─ `d`
     "#,
-        false,
-    );
+    false,
+  );
 }

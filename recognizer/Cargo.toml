@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-recognizer"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | Decision Table Recognizer"
 documentation = "https://docs.rs/dmntk-recognizer"
@@ -9,7 +9,7 @@ license.workspace = true
 edition.workspace = true
 
 [dependencies]
-dmntk-common-1.workspace = true
+dmntk-common.workspace = true
 dmntk-macros.workspace = true
 dmntk-model.workspace = true
 

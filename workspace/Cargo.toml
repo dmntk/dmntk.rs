@@ -1,6 +1,6 @@
 [package]
 name = "dmntk-workspace"
-version = "0.3.1"
+version.workspace = true
 authors.workspace = true
 description = "DMNTK | Workspace"
 documentation = "https://docs.rs/dmntk-workspace"
@@ -11,7 +11,7 @@ edition.workspace = true
 [dependencies]
 urlencoding.workspace = true
 walkdir.workspace = true
-dmntk-common-1.workspace = true
+dmntk-common.workspace = true
 dmntk-feel.workspace = true
 dmntk-feel-evaluator.workspace = true
 dmntk-macros.workspace = true
