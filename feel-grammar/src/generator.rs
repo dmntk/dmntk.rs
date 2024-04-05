@@ -112,7 +112,6 @@ pub fn lalr_rust_tables(output_file: &str) {
 #[cfg(test)]
 mod tests {
   use super::*;
-  use std::fs;
 
   /// Executes all tests sequentially, because these tests access the same files.
   #[test]
@@ -128,7 +127,7 @@ mod tests {
   fn test_feel_grammar() {
     let len = FEEL_GRAMMAR.len();
     assert!(len > 1000);
-    assert_eq!("%start feel", &FEEL_GRAMMAR[1341..1352]);
+    assert_eq!("%start feel", &FEEL_GRAMMAR[1309..1320]);
     assert_eq!("%%\n", &FEEL_GRAMMAR[len - 3..]);
   }
 

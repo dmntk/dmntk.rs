@@ -736,7 +736,6 @@ fn bif_replace(parameters: &NamedParameters) -> Value {
   }
 }
 
-///
 fn bif_reverse(parameters: &NamedParameters) -> Value {
   if let Some((value, _)) = get_param(parameters, &NAME_LIST) {
     core::reverse(value)
@@ -745,7 +744,6 @@ fn bif_reverse(parameters: &NamedParameters) -> Value {
   }
 }
 
-///
 fn bif_sort(parameters: &NamedParameters) -> Value {
   if let Some((list, _)) = get_param(parameters, &NAME_LIST) {
     if let Some((ordering_function, _)) = get_param(parameters, &NAME_PRECEDES) {
@@ -758,7 +756,6 @@ fn bif_sort(parameters: &NamedParameters) -> Value {
   }
 }
 
-///
 fn bif_split(parameters: &NamedParameters) -> Value {
   if let Some((input_string_value, _)) = get_param(parameters, &NAME_STRING) {
     if let Some((delimiter_string_value, _)) = get_param(parameters, &NAME_DELIMITER) {

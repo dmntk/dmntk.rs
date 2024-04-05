@@ -31,8 +31,6 @@
  */
 
 use super::super::*;
-use crate::lalr::TokenType::StartExpression;
-use crate::parser::Parser;
 
 #[test]
 fn _0001() {

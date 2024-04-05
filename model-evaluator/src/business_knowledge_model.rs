@@ -94,7 +94,6 @@ impl BusinessKnowledgeModelEvaluator {
   }
 }
 
-///
 fn build_bkm_evaluator(
   definitions: &DefDefinitions,
   business_knowledge_model: &DefBusinessKnowledgeModel,
@@ -142,7 +141,6 @@ fn build_bkm_evaluator(
   }
 }
 
-///
 fn build_bkm_expression_instance_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -240,7 +238,6 @@ fn build_bkm_expression_instance_evaluator(
   }
 }
 
-///
 fn build_bkm_context_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -264,7 +261,6 @@ fn build_bkm_context_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_decision_table_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -288,7 +284,6 @@ fn build_bkm_decision_table_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_function_definition_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -312,7 +307,6 @@ fn build_bkm_function_definition_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_invocation_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -336,7 +330,6 @@ fn build_bkm_invocation_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_list_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -360,7 +353,6 @@ fn build_bkm_list_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_literal_expression_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -384,7 +376,6 @@ fn build_bkm_literal_expression_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function, knowledge_requirements)
 }
 
-///
 fn build_bkm_relation_evaluator(
   scope: &FeelScope,
   formal_parameters: Vec<(Name, FeelType)>,
@@ -408,7 +399,6 @@ fn build_bkm_relation_evaluator(
   build_bkm_evaluator_from_function_definition(output_variable_name, function_definition, knowledge_requirements)
 }
 
-///
 fn build_bkm_evaluator_from_function_definition(
   output_variable_name: Name,
   function_definition: Value,

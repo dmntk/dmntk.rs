@@ -34,8 +34,7 @@
 
 use super::super::*;
 use crate::context::ParsingContext;
-use crate::lalr::TokenType::{List, StartExpression};
-use crate::parser::Parser;
+use crate::lalr::TokenType::List;
 
 #[test]
 fn _0001() {

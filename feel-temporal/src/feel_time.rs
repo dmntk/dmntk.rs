@@ -242,7 +242,6 @@ impl FeelTime {
     Self(hour, minute, second, nanos, FeelZone::Local)
   }
 
-  ///
   pub fn local_opt(hour: u8, minute: u8, second: u8, nano: u64) -> Option<Self> {
     if is_valid_time(hour, minute, second) {
       Some(Self(if hour == 24 { 0 } else { hour }, minute, second, nano, FeelZone::Local))
@@ -256,7 +255,6 @@ impl FeelTime {
     Self(hour, minute, second, nanos, FeelZone::Offset(offset))
   }
 
-  ///
   pub fn offset_opt(hour: u8, minute: u8, second: u8, nano: u64, offset: i32) -> Option<Self> {
     if is_valid_time(hour, minute, second) {
       if let Ok(zone) = FeelZone::try_from(offset) {
@@ -266,7 +264,6 @@ impl FeelTime {
     None
   }
 
-  ///
   pub fn zone_opt(hour: u8, minute: u8, second: u8, nano: u64, zone: FeelZone) -> Option<Self> {
     if is_valid_time(hour, minute, second) {
       return Some(Self(if hour == 24 { 0 } else { hour }, minute, second, nano, zone));

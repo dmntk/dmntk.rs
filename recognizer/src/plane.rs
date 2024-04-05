@@ -38,7 +38,6 @@ use crate::rect::{Rect, RECT_ZERO};
 use dmntk_common::Result;
 use dmntk_model::HitPolicy;
 use std::collections::HashSet;
-use std::convert::TryFrom;
 use std::fmt;
 use std::str::FromStr;
 
@@ -315,7 +314,6 @@ impl Plane {
     self.content.len()
   }
 
-  ///
   pub fn pivot(&mut self) {
     let mut pivot_content: Vec<Vec<Cell>> = vec![];
     while !self.content[0].is_empty() {

@@ -670,7 +670,6 @@ fn get_angle(start: &DcPoint, end: &DcPoint) -> f64 {
   }
 }
 
-///
 fn get_path_to_knowledge_source(bounds: &DcBounds) -> String {
   let period_div_2 = AMPLITUDE / 2.0;
   let curve_base_height = bounds.y + bounds.height - period_div_2;

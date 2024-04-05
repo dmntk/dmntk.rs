@@ -39,7 +39,6 @@
 
 use self::errors::*;
 use crate::DmntkError;
-use std::convert::TryFrom;
 use uriparse::{RelativeReference, URIReference, URI};
 
 /// URI reference used for utilizing `href` attribute.

@@ -304,7 +304,6 @@ impl ColorPalette {
     &self.white
   }
 
-  ///
   pub fn reset(&self) -> &str {
     &self.reset
   }

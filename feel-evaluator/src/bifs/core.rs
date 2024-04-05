@@ -43,7 +43,6 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use std::borrow::Borrow;
 use std::cmp::Ordering;
-use std::convert::TryFrom;
 use std::str::FromStr;
 
 /// Returns the absolute value of the argument.
@@ -1233,7 +1232,7 @@ pub fn max(values: &[Value]) -> Value {
         match value {
           Value::String(v) => {
             if *v > max {
-              max = v.clone();
+              max.clone_from(v);
             }
           }
           Value::Null(_) => {}
@@ -1409,7 +1408,7 @@ pub fn min(values: &[Value]) -> Value {
       for value in values.iter().skip(1) {
         if let Value::String(v) = value {
           if *v < min {
-            min = v.clone();
+            min.clone_from(v);
           }
         } else {
           return invalid_argument_type!("min", "string", value.type_of());

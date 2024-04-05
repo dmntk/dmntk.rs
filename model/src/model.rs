@@ -38,7 +38,6 @@
 use crate::errors::*;
 use dmntk_common::{gen_id, DmntkError, HRef, Result, Uri};
 use dmntk_feel::{FeelType, Name};
-use std::convert::TryFrom;
 use std::fmt;
 use std::slice::Iter;
 
@@ -1680,7 +1679,6 @@ impl fmt::Display for BuiltinAggregator {
   }
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct InputClause {
   /// The subject of this input clause, text representation of unary tests.
@@ -1689,7 +1687,6 @@ pub struct InputClause {
   pub allowed_input_values: Option<String>,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct OutputClause {
   /// Type reference may specify the type to be used as decision table's output when more than one output clause is present.
@@ -1702,14 +1699,12 @@ pub struct OutputClause {
   pub default_output_entry: Option<String>,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct RuleAnnotationClause {
   /// Name that is used as the name of the rule annotation column of the containing decision table.
   pub name: String,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DecisionRule {
   /// Ordered list of input entries that compose this decision rule.
@@ -1720,21 +1715,18 @@ pub struct DecisionRule {
   pub annotation_entries: Vec<AnnotationEntry>,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct InputEntry {
   /// Text representation of unary test that composes this input entry.
   pub text: String,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct OutputEntry {
   /// Text representation of literal expression that composes this output entry.
   pub text: String,
 }
 
-///
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AnnotationEntry {
   /// Text representing this rule annotation.

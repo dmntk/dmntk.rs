@@ -920,7 +920,6 @@ impl ModelParser {
     }
   }
 
-  ///
   fn parse_optional_relation(&self, node: &Node) -> Result<Option<Relation>> {
     if let Some(ref child_node) = node.children().find(|n| n.tag_name().name() == NODE_RELATION) {
       return Ok(Some(self.parse_relation(child_node)?));
@@ -928,7 +927,6 @@ impl ModelParser {
     Ok(None)
   }
 
-  ///
   fn parse_relation(&self, node: &Node) -> Result<Relation> {
     let mut columns = vec![];
     for ref column_node in node.children().filter(|n| n.tag_name().name() == NODE_COLUMN) {

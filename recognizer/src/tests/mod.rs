@@ -30,8 +30,6 @@
  * limitations under the License.
  */
 
-//!
-
 mod builder;
 mod canvas;
 mod plane;

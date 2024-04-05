@@ -36,7 +36,6 @@ use crate::errors::*;
 use dmntk_common::DmntkError;
 use once_cell::sync::Lazy;
 use regex::Regex;
-use std::convert::TryFrom;
 use std::{fmt, ops};
 
 /// Regular expression pattern for parsing years and months duration.

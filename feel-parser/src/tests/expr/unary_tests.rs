@@ -32,7 +32,6 @@
 
 use super::super::*;
 use crate::lalr::TokenType::StartUnaryTests;
-use crate::parser::Parser;
 use dmntk_common::DmntkError;
 
 #[test]

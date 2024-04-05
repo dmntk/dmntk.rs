@@ -30,19 +30,15 @@
  * limitations under the License.
  */
 
-//!
-
 use dmntk_feel::context::FeelContext;
 use dmntk_feel::values::{Value, Values};
 use dmntk_feel::{Evaluator, FeelScope, Name};
 
-///
 enum FeelIterationType {
   Range,
   List,
 }
 
-///
 struct FeelIteratorState {
   /// Enumeration indicating if the iteration is over the range of values or a list of values.
   iteration_type: FeelIterationType,
@@ -60,14 +56,12 @@ struct FeelIteratorState {
   values: Option<Values>,
 }
 
-///
 #[derive(Default)]
 pub(crate) struct FeelIterator {
   iteration_states: Vec<FeelIteratorState>,
 }
 
 impl FeelIterator {
-  ///
   pub fn add_range(&mut self, name: Name, start: isize, end: isize) {
     self.iteration_states.push(FeelIteratorState {
       iteration_type: FeelIterationType::Range,
@@ -79,7 +73,6 @@ impl FeelIterator {
       values: None,
     });
   }
-  ///
   pub fn add_list(&mut self, name: Name, values: Values) {
     self.iteration_states.push(FeelIteratorState {
       iteration_type: FeelIterationType::List,
@@ -91,7 +84,6 @@ impl FeelIterator {
       values: Some(values),
     });
   }
-  ///
   pub fn run<F>(&mut self, mut handler: F)
   where
     F: FnMut(&FeelContext),
@@ -170,14 +162,12 @@ pub struct ForExpressionEvaluator {
 }
 
 impl ForExpressionEvaluator {
-  ///
   pub fn new() -> Self {
     Self {
       feel_iterator: FeelIterator::default(),
       name_partial: "partial".into(),
     }
   }
-  ///
   pub fn add_single(&mut self, name: Name, value: Value) {
     let values = match value {
       Value::List(values) => values,
@@ -185,7 +175,6 @@ impl ForExpressionEvaluator {
     };
     self.feel_iterator.add_list(name, values);
   }
-  ///
   pub fn add_range(&mut self, name: Name, range_start: Value, range_end: Value) {
     if let Value::Number(start) = range_start {
       if let Value::Number(end) = range_end {
@@ -197,7 +186,6 @@ impl ForExpressionEvaluator {
       }
     }
   }
-  ///
   pub fn evaluate(&mut self, scope: &FeelScope, evaluator: &Evaluator) -> Values {
     let mut results = vec![];
     self.feel_iterator.run(|ctx| {
@@ -217,13 +205,11 @@ pub struct SomeExpressionEvaluator {
 }
 
 impl SomeExpressionEvaluator {
-  ///
   pub fn new() -> Self {
     Self {
       feel_iterator: FeelIterator::default(),
     }
   }
-  ///
   pub fn add(&mut self, name: Name, value: Value) {
     let values = match value {
       Value::List(values) => values,
@@ -231,7 +217,6 @@ impl SomeExpressionEvaluator {
     };
     self.feel_iterator.add_list(name, values);
   }
-  ///
   pub fn evaluate(&mut self, scope: &FeelScope, evaluator: &Evaluator) -> Value {
     let mut result = false;
     self.feel_iterator.run(|ctx| {
@@ -250,13 +235,11 @@ pub struct EveryExpressionEvaluator {
 }
 
 impl EveryExpressionEvaluator {
-  ///
   pub fn new() -> Self {
     Self {
       feel_iterator: FeelIterator::default(),
     }
   }
-  ///
   pub fn add(&mut self, name: Name, value: Value) {
     let values = match value {
       Value::List(values) => values,
@@ -264,7 +247,6 @@ impl EveryExpressionEvaluator {
     };
     self.feel_iterator.add_list(name, values);
   }
-  ///
   pub fn evaluate(&mut self, scope: &FeelScope, evaluator: &Evaluator) -> Value {
     let mut result = true;
     self.feel_iterator.run(|ctx| {
