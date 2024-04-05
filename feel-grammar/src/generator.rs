@@ -95,7 +95,7 @@ mod tests {
   fn test_feel_grammar() {
     let len = FEEL_GRAMMAR.len();
     assert!(len > 1000);
-    assert_eq!("%start feel", &FEEL_GRAMMAR[1309..1320]);
+    assert_eq!("%start feel", &FEEL_GRAMMAR[71..82]);
     assert_eq!("%%\n", &FEEL_GRAMMAR[len - 3..]);
   }
 
@@ -110,6 +110,6 @@ mod tests {
     lalr_rust_tables(&output_file);
     let lalr = fs::read_to_string(output_file).expect("reading Rust LALR tables failed");
     assert!(lalr.len() > 1000);
-    assert_eq!("DMNTK", &lalr[6..11]);
+    assert_eq!("Parsing tables", &lalr[5..19]);
   }
 }
