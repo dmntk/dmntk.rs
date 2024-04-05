@@ -6,7 +6,7 @@
 
 ## Notice
 
-DMNTK **is deprecated** in favor of [Decision Toolkit](https://crates.io/crates/dsntk).
+DMNTK **is deprecated** in favor of **[Decision Toolkit](https://crates.io/crates/dsntk)**.
 
 **[Decision Toolkit](https://crates.io/crates/dsntk)** provides all functionalities of DMNTK and much more.
 
