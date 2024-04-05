@@ -4,7 +4,7 @@
 [apache-license-url]: https://github.com/dmntk/dmntk-rs/blob/main/LICENSE
 [apache-notice-url]: https://github.com/dmntk/dmntk-rs/blob/main/NOTICE
 
-# Notice
+## Notice
 
 DMNTK **is deprecated** in favor of [Decision Toolkit](https://crates.io/crates/dsntk).
 
