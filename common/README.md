@@ -10,7 +10,7 @@ DMNTK **is deprecated** in favor of [Decision Toolkit](https://crates.io/crates/
 
 **[Decision Toolkit](https://crates.io/crates/dsntk)** provides all functionalities of DMNTK and much more.
 
-If you encounter any problems replacing DMNTK with **[Decision Toolkit](https://github.com/dsntk)**,
+If you encounter any problems replacing DMNTK with **[Decision Toolkit](https://crates.io/crates/dsntk)**,
 please file an issue **[here](https://github.com/dsntk/dsntk-rs/issues)**!
 
 ## License
