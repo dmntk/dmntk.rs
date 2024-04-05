@@ -1,0 +1,30 @@
+version: '3'
+
+silent: true
+
+tasks:
+
+  build:
+    desc: Builds in debug mode
+    cmds:
+      - cmd: cargo +stable build --workspace
+  
+  clean:
+    desc: Cleans all targets
+    cmds:
+      - cmd: cargo clean
+
+  clippy:
+    desc: Runs clippy for all targets
+    cmds:
+      - cmd: cargo +nightly clippy --workspace --all-targets
+  
+  fmt:
+    desc: Runs code formatter
+    cmds:
+      - cmd: cargo +nightly fmt
+  
+  test:
+    desc: Runs tests in debug mode
+    cmds:
+      - cmd: cargo +stable test --workspace
