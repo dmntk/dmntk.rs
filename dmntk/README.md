@@ -6,12 +6,12 @@
 
 ## Notice
 
-DMNTK **is deprecated** in favor of **[Decision Toolkit](https://crates.io/crates/dsntk)**.
+**DMNTK is deprecated** 📦 in favor of **[Decision Toolkit](https://github.com/DecisionToolkit)** 🚀.
 
-**[Decision Toolkit](https://crates.io/crates/dsntk)** provides all functionalities of DMNTK and much more.
+**[Decision Toolkit](https://github.com/DecisionToolkit)** provides all functionalities of DMNTK and much more.
 
-If you encounter any problems replacing DMNTK with **[Decision Toolkit](https://crates.io/crates/dsntk)**,
-please file an issue **[here](https://github.com/dsntk/dsntk-rs/issues)**!
+If you encounter any problems replacing DMNTK with **[Decision Toolkit](https://github.com/DecisionToolkit)**,
+please file an issue **[here](https://github.com/DecisionToolkit/dsntk-rs/issues)**!
 
 ## License
 
