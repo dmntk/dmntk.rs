@@ -24,7 +24,7 @@ members = [
 
 [workspace.package]
 version = "0.3.5"
-authors = ["Dariusz Depta <dariusz.depta@dmntk.io>"]
+authors = ["Dariusz Depta <depta@engos.de>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 
@@ -53,19 +53,19 @@ uriparse = "0.6.4"
 url = "2.5.0"
 urlencoding = "2.1.3"
 walkdir = "2.5.0"
-dmntk-common = { path = "./common" }
-dmntk-evaluator = { path = "./evaluator" }
-dmntk-examples = { path = "./examples" }
-dmntk-feel = { path = "./feel" }
-dmntk-feel-evaluator = { path = "./feel-evaluator" }
-dmntk-feel-grammar = { path = "./feel-grammar" }
-dmntk-feel-number = { path = "./feel-number" }
-dmntk-feel-parser = { path = "./feel-parser" }
-dmntk-feel-temporal = { path = "./feel-temporal" }
-dmntk-gendoc = { path = "./gendoc" }
-dmntk-macros = { path = "./macros" }
-dmntk-model = { path = "./model" }
-dmntk-model-evaluator = { path = "./model-evaluator" }
-dmntk-recognizer = { path = "./recognizer" }
-dmntk-server = { path = "./server" }
-dmntk-workspace = { path = "./workspace" }
+dmntk-common = "0.3.5"
+dmntk-evaluator = "0.3.5"
+dmntk-examples = "0.3.5"
+dmntk-feel = "0.3.5"
+dmntk-feel-evaluator = "0.3.5"
+dmntk-feel-grammar = "0.3.5"
+dmntk-feel-number = "0.3.5"
+dmntk-feel-parser = "0.3.5"
+dmntk-feel-temporal = "0.3.5"
+dmntk-gendoc = "0.3.5"
+dmntk-macros = "0.3.5"
+dmntk-model = "0.3.5"
+dmntk-model-evaluator = "0.3.5"
+dmntk-recognizer = "0.3.5"
+dmntk-server = "0.3.5"
+dmntk-workspace = "0.3.5"
