@@ -600,14 +600,14 @@ dependencies = [
  "clap",
  "difference",
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-evaluator",
+ "dmntk-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-parser",
- "dmntk-gendoc",
- "dmntk-model",
- "dmntk-recognizer",
- "dmntk-server",
- "dmntk-workspace",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-gendoc 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-recognizer 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-server 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-workspace 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "once_cell",
  "serde",
 ]
@@ -642,9 +642,22 @@ version = "0.3.6"
 dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-evaluator",
- "dmntk-feel-parser",
- "dmntk-model-evaluator",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "dmntk-evaluator"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "99a03f2f264af2953d53e1c57b0111b64ed850f2a8d7081f2b093abdf2bbc137"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -699,7 +712,25 @@ version = "0.3.6"
 dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-parser",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-temporal 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "once_cell",
+ "regex",
+ "reqwest",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "dmntk-feel-evaluator"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68d6a14d74ba73ad8a4174ddf2f63c07f250bededab1bf55e7f85b0dda132b50"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel-temporal 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "once_cell",
@@ -759,6 +790,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "dmntk-feel-parser"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec9c94381f5784bf5bd15be86a8a17e133666173fb35029b6702b4b937a0b0c6"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-grammar 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "dmntk-feel-temporal"
 version = "0.3.6"
 dependencies = [
@@ -793,8 +836,22 @@ dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-model",
- "dmntk-recognizer",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-recognizer 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "domrs",
+ "markdown",
+]
+
+[[package]]
+name = "dmntk-gendoc"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2f8e733c366038ff1ea673d56b2de3a71c4664a9717afa240970e369868144a3"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "domrs",
  "markdown",
 ]
@@ -824,7 +881,22 @@ dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-parser",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "petgraph",
+ "roxmltree",
+]
+
+[[package]]
+name = "dmntk-model"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "885e55f269c74fbe5ea5f086c87e660e8dcab1c0b1a4ec1a924cc5dc9733abd4"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "petgraph",
  "roxmltree",
@@ -837,14 +909,29 @@ dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-evaluator",
- "dmntk-feel-parser",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel-temporal 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-model",
- "dmntk-recognizer",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-recognizer 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "once_cell",
  "walkdir",
+]
+
+[[package]]
+name = "dmntk-model-evaluator"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "35520f431125b74ad2afcc45e0a9bf4a45b3af01b98da553e0827274fc45b81c"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-parser 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-temporal 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -854,7 +941,18 @@ dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-model",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "dmntk-recognizer"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ea4b21708d13ccef4931f742ce31c1c83a5e8aed1700f44d972440590e49c447"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -864,11 +962,29 @@ dependencies = [
  "actix-web",
  "base64",
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-evaluator",
+ "dmntk-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-model",
- "dmntk-workspace",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-workspace 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "dmntk-server"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "79f902562931a3194220f1e550dbd647ff6ed662e18cdaa61aa73451873b9cd8"
+dependencies = [
+ "actix-web",
+ "base64",
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-workspace 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde",
  "serde_json",
 ]
@@ -880,10 +996,26 @@ dependencies = [
  "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-examples 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-feel-evaluator",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "dmntk-model",
- "dmntk-model-evaluator",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "urlencoding",
+ "walkdir",
+]
+
+[[package]]
+name = "dmntk-workspace"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e743e25160d22bac48a05c1d20403e859e0e9a5c56f07825c78294731459fd94"
+dependencies = [
+ "dmntk-common 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-feel-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-macros 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dmntk-model-evaluator 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "urlencoding",
  "walkdir",
 ]

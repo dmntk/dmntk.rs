@@ -54,18 +54,18 @@ url = "2.5.2"
 urlencoding = "2.1.3"
 walkdir = "2.5.0"
 dmntk-common = "0.3.6"
-dmntk-evaluator = { path = "./evaluator" }
+dmntk-evaluator = "0.3.6"
 dmntk-examples = "0.3.6"
 dmntk-feel = "0.3.6"
-dmntk-feel-evaluator = { path = "./feel-evaluator" }
+dmntk-feel-evaluator = "0.3.6"
 dmntk-feel-grammar = "0.3.6"
 dmntk-feel-number = "0.3.6"
-dmntk-feel-parser = { path = "./feel-parser" }
+dmntk-feel-parser = "0.3.6"
 dmntk-feel-temporal = "0.3.6"
-dmntk-gendoc = { path = "./gendoc" }
+dmntk-gendoc = "0.3.6"
 dmntk-macros = "0.3.6"
-dmntk-model = { path = "./model" }
-dmntk-model-evaluator = { path = "./model-evaluator" }
-dmntk-recognizer = { path = "./recognizer" }
-dmntk-server = { path = "./server" }
-dmntk-workspace = { path = "./workspace" }
+dmntk-model = "0.3.6"
+dmntk-model-evaluator = "0.3.6"
+dmntk-recognizer = "0.3.6"
+dmntk-server = "0.3.6"
+dmntk-workspace = "0.3.6"
