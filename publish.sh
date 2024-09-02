@@ -15,17 +15,17 @@ publish() {
   echo " Published $1 ($3/17)                                                 "
   echo "======================================================================"
   echo "...sleeping 5s..."
-  sleep 5s
+  sleep 10s
 }
 
 publish_all() {
-  publish "examples"          "dmntk-examples"             1
-  publish "macros"            "dmntk-macros"               2
-  publish "common"            "dmntk-common"               3
-  publish "feel-number"       "dmntk-feel-number"          4
-  publish "feel-temporal"     "dmntk-feel-temporal"        5
-  publish "feel-grammar"      "dmntk-feel-grammar"         6
-  publish "feel"              "dmntk-feel"                 7
+  # publish "examples"          "dmntk-examples"             1
+  # publish "macros"            "dmntk-macros"               2
+  # publish "common"            "dmntk-common"               3
+  # publish "feel-number"       "dmntk-feel-number"          4
+  # publish "feel-temporal"     "dmntk-feel-temporal"        5
+  # publish "feel-grammar"      "dmntk-feel-grammar"         6
+  # publish "feel"              "dmntk-feel"                 7
   publish "feel-parser"       "dmntk-feel-parser"          8
   publish "feel-evaluator"    "dmntk-feel-evaluator"       9
   publish "model"             "dmntk-model"               10
@@ -40,7 +40,7 @@ publish_all() {
 
 publish_all
 
-cargo fmt
+cargo +nightly fmt
 
 # dmntk-common = { path = "./common" }
 # dmntk-evaluator = { path = "./evaluator" }
