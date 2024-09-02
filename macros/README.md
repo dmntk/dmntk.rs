@@ -3,15 +3,19 @@
 [apache-url]: https://www.apache.org/licenses/LICENSE-2.0
 [apache-license-url]: https://github.com/dmntk/dmntk.rs/blob/main/LICENSE
 [apache-notice-url]: https://github.com/dmntk/dmntk.rs/blob/main/NOTICE
+[crates-url]: https://crates.io/crates/dsntk
+[issues-url]: https://github.com/DecisionToolkit/dsntk-rs/issues
 
 ## Notice
 
-**DMNTK is deprecated** 📦 in favor of **[Decision Toolkit](https://github.com/DecisionToolkit)** 🚀.
+DMNTK is **deprecated** in favor of [**Decision Toolkit**][crates-url].
 
-**[Decision Toolkit](https://github.com/DecisionToolkit)** provides all functionalities of DMNTK and much more.
+[**Decision Toolkit**][crates-url] is a successor of DMNTK.
 
-If you encounter any problems replacing DMNTK with **[Decision Toolkit](https://github.com/DecisionToolkit)**,
-please file an issue **[here](https://github.com/DecisionToolkit/dsntk-rs/issues)**!
+[**Decision Toolkit**][crates-url] provides all functionalities of DMNTK and much more.
+
+If you're having any problems replacing DMNTK with [**Decision Toolkit**][crates-url],
+please [**file an issue**][issues-url]!
 
 ## License
 
