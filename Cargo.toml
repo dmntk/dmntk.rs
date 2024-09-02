@@ -23,49 +23,49 @@ members = [
 ]
 
 [workspace.package]
-version = "0.3.5"
+version = "0.3.6"
 authors = ["Dariusz Depta <depta@engos.de>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 
 [workspace.dependencies]
-actix-web = "4.5.1"
-base64 = "0.22.0"
-chrono = "0.4.37"
+actix-web = "4.9.0"
+base64 = "0.22.1"
+chrono = "0.4.38"
 chrono-tz = "0.9.0"
 convert_case = "0.6.0"
-clap = { version = "4.5.4", features = ["cargo"] }
+clap = { version = "4.5.16", features = ["cargo"] }
 dfp-number-sys = "0.1.0"
 difference = "2.0.0"
-domrs = "0.0.5"
-markdown = "1.0.0-alpha.16"
+domrs = "=0.0.5"
+markdown = "1.0.0-alpha.20"
 once_cell = "1.19.0"
 petgraph = "0.6.4"
-quote = "1.0.36"
-regex = "1.10.4"
-reqwest = { version = "0.12.3", default-features = false, features = ["blocking", "json", "rustls-tls"] }
-roxmltree = "0.19.0"
-serde = { version = "1.0.197", features = ["derive"] }
-serde_json = "1.0.115"
-syn = "2.0.59"
-uuid = { version = "1.8.0", features = ["v4"] }
+quote = "1.0.37"
+regex = "1.10.6"
+reqwest = { version = "0.12.7", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+roxmltree = "0.20.0"
+serde = { version = "1.0.209", features = ["derive"] }
+serde_json = "1.0.127"
+syn = "2.0.77"
+uuid = { version = "1.10.0", features = ["v4"] }
 uriparse = "0.6.4"
-url = "2.5.0"
+url = "2.5.2"
 urlencoding = "2.1.3"
 walkdir = "2.5.0"
-dmntk-common = "0.3.5"
-dmntk-evaluator = "0.3.5"
-dmntk-examples = "0.3.5"
-dmntk-feel = "0.3.5"
-dmntk-feel-evaluator = "0.3.5"
-dmntk-feel-grammar = "0.3.5"
-dmntk-feel-number = "0.3.5"
-dmntk-feel-parser = "0.3.5"
-dmntk-feel-temporal = "0.3.5"
-dmntk-gendoc = "0.3.5"
-dmntk-macros = "0.3.5"
-dmntk-model = "0.3.5"
-dmntk-model-evaluator = "0.3.5"
-dmntk-recognizer = "0.3.5"
-dmntk-server = "0.3.5"
-dmntk-workspace = "0.3.5"
+dmntk-common = { path = "./common" }
+dmntk-evaluator = { path = "./evaluator" }
+dmntk-examples = { path = "./examples" }
+dmntk-feel = { path = "./feel" }
+dmntk-feel-evaluator = { path = "./feel-evaluator" }
+dmntk-feel-grammar = { path = "./feel-grammar" }
+dmntk-feel-number = { path = "./feel-number" }
+dmntk-feel-parser = { path = "./feel-parser" }
+dmntk-feel-temporal = { path = "./feel-temporal" }
+dmntk-gendoc = { path = "./gendoc" }
+dmntk-macros = { path = "./macros" }
+dmntk-model = { path = "./model" }
+dmntk-model-evaluator = { path = "./model-evaluator" }
+dmntk-recognizer = { path = "./recognizer" }
+dmntk-server = { path = "./server" }
+dmntk-workspace = { path = "./workspace" }

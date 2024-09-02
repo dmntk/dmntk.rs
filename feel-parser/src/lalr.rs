@@ -79,14 +79,19 @@ pub enum SymbolKind {
   YyAccept = 61,
 }
 
+///
 pub const YY_PACT_N_INF: i16 = -222;
 
+///
 pub const YY_TABLE_N_INF: i16 = -108;
 
+///
 pub const YY_FINAL: usize = 48;
 
+///
 pub const YY_LAST: i16 = 867;
 
+///
 pub const YY_N_TOKENS: usize = 61;
 
 /// `YY_TRANSLATE[TOKEN-NUM]` - symbol number corresponding to TOKEN-NUM as returned by lexer.
