@@ -8,13 +8,13 @@
 
 ## Notice
 
-DMNTK is **deprecated** in favor of [**Decision Toolkit**][crates-url].
+DMNTK is **deprecated** in favor of [**DecisionToolkit**][crates-url].
 
-[**Decision Toolkit**][crates-url] is a successor of DMNTK.
+[**DecisionToolkit**][crates-url] is a successor of DMNTK.
 
-[**Decision Toolkit**][crates-url] provides all functionalities of DMNTK and much more.
+[**DecisionToolkit**][crates-url] provides all functionalities of DMNTK and much more.
 
-If you're having any problems replacing DMNTK with [**Decision Toolkit**][crates-url],
+If you're having any problems replacing DMNTK with [**DecisionToolkit**][crates-url],
 please [**file an issue**][issues-url]!
 
 ## License
