@@ -499,25 +499,25 @@ impl Value {
   /// with a type expected in that context, called the target type.
   /// After the type of the value is known, an implicit conversion
   /// from the type of the value to the target type can be performed.
-  /// If an implicit conversion is mandatory but it cannot be performed,
+  /// If an implicit conversion is mandatory, but it cannot be performed,
   /// the result is null.
   ///
   /// There are several possible type conversions:
   ///
   /// - to singleton list:
   ///
-  ///      When the type of the value is `T` and the target type is `List<T>`,
-  ///      the simple value is converted to a singleton list.
+  ///   When the type of the value is `T` and the target type is `List<T>`,
+  ///   the simple value is converted to a singleton list.
   ///
   /// - from singleton list:
   ///
-  ///      When the type of the value is `List<T>`, and the value is a singleton list
-  ///      and the target type is T, the value is converted by unwrapping the first element.
+  ///   When the type of the value is `List<T>`, and the value is a singleton list
+  ///   and the target type is T, the value is converted by unwrapping the first element.
   ///
   /// - conforms to:
   ///
-  ///      When the type of the value is T1, the target type is T2, and T1 conforms to T2,
-  ///      the value remains unchanged. Otherwise the result is null.
+  ///   When the type of the value is T1, the target type is T2, and T1 conforms to T2,
+  ///   the value remains unchanged. Otherwise, the result is null.
   ///
   /// All these conversion rules are implemented in this function.
   ///

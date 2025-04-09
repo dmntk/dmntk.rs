@@ -5,7 +5,7 @@
 
 use crate::errors::*;
 use dfp_number_sys::bid128_000::*;
-use dfp_number_sys::{BID128, FB_CLEAR, RM_NEAREST_EVEN};
+use dfp_number_sys::{BID128, EXE_CLEAR, RND_NEAREST_EVEN};
 use dmntk_common::{DmntkError, Jsonify};
 use std::cmp::Ordering;
 use std::fmt;
@@ -23,7 +23,7 @@ macro_rules! flags {
 /// Rounding mode.
 macro_rules! round {
   () => {
-    RM_NEAREST_EVEN
+    RND_NEAREST_EVEN
   };
 }
 
@@ -34,7 +34,7 @@ pub struct FeelNumber(BID128, bool);
 impl FeelNumber {
   /// Returns [FeelNumber] value Inf (infinite).
   pub fn infinite() -> FeelNumber {
-    Self(bid128_inf(), false)
+    Self(bid128_infinite(), false)
   }
 
   /// Returns [FeelNumber] value 0 (zero).
@@ -72,7 +72,7 @@ impl FeelNumber {
     Self(bid128_abs(self.0, flags!()), false)
   }
 
-  /// Returns a nearest integer greater than this [FeelNumber].
+  /// Returns the nearest integer greater than this [FeelNumber].
   pub fn ceiling(&self) -> Self {
     let bid = bid128_round_integral_positive(self.0, flags!());
     if bid128_is_zero(bid) {
@@ -339,7 +339,7 @@ impl Debug for FeelNumber {
 }
 
 impl Display for FeelNumber {
-  /// Converts [FeelNumber] to human readable string.
+  /// Converts [FeelNumber] to human-readable string.
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
     let s = bid128_to_string(self.0, flags!());
     let negative = s.starts_with('-');
@@ -487,9 +487,9 @@ impl TryFrom<FeelNumber> for u8 {
 impl TryFrom<&FeelNumber> for u8 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_uint32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     n.try_into().map_err(|_| err_number_conversion_failed())
@@ -506,9 +506,9 @@ impl TryFrom<FeelNumber> for i8 {
 impl TryFrom<&FeelNumber> for i8 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_int32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     n.try_into().map_err(|_| err_number_conversion_failed())
@@ -525,9 +525,9 @@ impl TryFrom<FeelNumber> for u16 {
 impl TryFrom<&FeelNumber> for u16 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_uint32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     n.try_into().map_err(|_| err_number_conversion_failed())
@@ -544,9 +544,9 @@ impl TryFrom<FeelNumber> for i16 {
 impl TryFrom<&FeelNumber> for i16 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_int32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     n.try_into().map_err(|_| err_number_conversion_failed())
@@ -563,9 +563,9 @@ impl TryFrom<FeelNumber> for u32 {
 impl TryFrom<&FeelNumber> for u32 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_uint32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n)
@@ -582,9 +582,9 @@ impl TryFrom<FeelNumber> for i32 {
 impl TryFrom<&FeelNumber> for i32 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_int32_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n)
@@ -601,9 +601,9 @@ impl TryFrom<FeelNumber> for u64 {
 impl TryFrom<&FeelNumber> for u64 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_uint64_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n)
@@ -620,9 +620,9 @@ impl TryFrom<FeelNumber> for i64 {
 impl TryFrom<&FeelNumber> for i64 {
   type Error = DmntkError;
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_int64_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n)
@@ -640,9 +640,9 @@ impl TryFrom<&FeelNumber> for usize {
   type Error = DmntkError;
   #[cfg(target_pointer_width = "64")]
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_uint64_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n.try_into().unwrap())
@@ -664,9 +664,9 @@ impl TryFrom<&FeelNumber> for isize {
   type Error = DmntkError;
   #[cfg(target_pointer_width = "64")]
   fn try_from(value: &FeelNumber) -> Result<Self, Self::Error> {
-    let mut flags = FB_CLEAR;
+    let mut flags = EXE_CLEAR;
     let n = bid128_to_int64_int(value.0, &mut flags);
-    if flags != FB_CLEAR {
+    if flags != EXE_CLEAR {
       return Err(err_number_conversion_failed());
     }
     Ok(n.try_into().unwrap())

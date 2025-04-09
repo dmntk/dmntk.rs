@@ -70,15 +70,15 @@ pub fn extract(input: &str) -> String {
   }
   {
     // generate constants
-    output.push_str("\n/// \n");
+    output.push_str("\n/// YY_PACT_N_INF.\n");
     let _ = writeln!(output, "pub const YY_PACT_N_INF: i16 = {yy_pact_n_inf};");
-    output.push_str("\n///\n");
+    output.push_str("\n/// YY_TABLE_N_INF.\n");
     let _ = writeln!(output, "pub const YY_TABLE_N_INF: i16 = {yy_table_n_inf};");
-    output.push_str("\n///\n");
+    output.push_str("\n/// YY_FINAL.\n");
     let _ = writeln!(output, "pub const YY_FINAL: usize = {yy_final};");
-    output.push_str("\n///\n");
+    output.push_str("\n/// YY_LAST.\n");
     let _ = writeln!(output, "pub const YY_LAST: i16 = {yy_last};");
-    output.push_str("\n///\n");
+    output.push_str("\n/// YY_N_TOKENS.\n");
     let _ = writeln!(output, "pub const YY_N_TOKENS: usize = {yy_n_tokens};");
   }
   // generate tables

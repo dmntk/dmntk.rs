@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PUBLISHED_VERSION="0.3.6"
+PUBLISHED_VERSION="0.3.7"
 
 publish() {
   echo "======================================================================"
@@ -19,13 +19,13 @@ publish() {
 }
 
 publish_all() {
-  # publish "examples"          "dmntk-examples"             1
-  # publish "macros"            "dmntk-macros"               2
-  # publish "common"            "dmntk-common"               3
-  # publish "feel-number"       "dmntk-feel-number"          4
-  # publish "feel-temporal"     "dmntk-feel-temporal"        5
-  # publish "feel-grammar"      "dmntk-feel-grammar"         6
-  # publish "feel"              "dmntk-feel"                 7
+  publish "examples"          "dmntk-examples"             1
+  publish "macros"            "dmntk-macros"               2
+  publish "common"            "dmntk-common"               3
+  publish "feel-number"       "dmntk-feel-number"          4
+  publish "feel-temporal"     "dmntk-feel-temporal"        5
+  publish "feel-grammar"      "dmntk-feel-grammar"         6
+  publish "feel"              "dmntk-feel"                 7
   publish "feel-parser"       "dmntk-feel-parser"          8
   publish "feel-evaluator"    "dmntk-feel-evaluator"       9
   publish "model"             "dmntk-model"               10
