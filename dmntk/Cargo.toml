@@ -8,6 +8,10 @@ repository = "https://github.com/dmntk/dmntk.rs.git"
 license.workspace = true
 edition.workspace = true
 
+[features]
+default = []
+tck = ["dmntk-server/tck"]
+
 [dependencies]
 actix-web.workspace = true
 base64.workspace = true
